@@ -14,8 +14,10 @@ env/
 node_modules/
 
 # Scraping runtime output
-P-1/output/
-P-1/profiles/
+method1/output/
+method1/profiles/
+method2/output/
+method2/logs/
 
 # OS junk
 .DS_Store

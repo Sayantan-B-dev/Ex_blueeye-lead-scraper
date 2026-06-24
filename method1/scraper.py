@@ -346,9 +346,10 @@ def main():
                             print("Name:", row["name"])
                             all_rows.append(row)
 
-                            df = pd.DataFrame(all_rows)
-                            df.drop_duplicates(subset=["name", "phone", "address"], inplace=True)
-                            df.to_csv(args.output, index=False, encoding="utf-8-sig")
+                            if len(all_rows) % 20 == 0:
+                                df = pd.DataFrame(all_rows)
+                                df.drop_duplicates(subset=["name", "phone", "address"], inplace=True)
+                                df.to_csv(args.output, index=False, encoding="utf-8-sig")
 
                         except Exception as e:
                             print(f"Business {i+1} failed:", e)

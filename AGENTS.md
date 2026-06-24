@@ -134,6 +134,36 @@ Each scraper.py:
 | P3 | 1269 | ~254/batch |
 | **Total** | **2025** | — |
 
+## P-2 (Docker-based)
+
+Uses [gosom/google-maps-scraper](https://github.com/gosom/google-maps-scraper) instead of custom Playwright.
+
+```
+P-2/
+├── p2_queries.txt      # All 324 P2 queries (combined from P-1 batches)
+├── run.bat              # Windows CMD runner
+├── run.ps1              # PowerShell runner
+└── run.sh               # Git Bash / WSL runner
+```
+
+### Run P-2
+```bash
+cd P-2
+./run.sh                   # Git Bash / Linux / WSL
+# or: cmd //c run.bat      # CMD
+# or: powershell -ExecutionPolicy Bypass -File run.ps1  # PowerShell
+```
+
+### Output
+Results land in `gmaps-output/p2_results.csv`.
+
+Column schema is different from P-1 (uses the gosom tool's schema — 36 fields including emails, coordinates, reviews, etc.).
+
+### Merge into final
+```bash
+python merge.py --pattern "gmaps-output/*.csv" --output P-2/p2_final.csv
+```
+
 ## State
 - Query generation: ✅ Done (2025 queries)
 - Batches: ✅ Done (5 per priority)
