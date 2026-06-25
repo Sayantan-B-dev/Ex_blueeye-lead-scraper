@@ -22,6 +22,8 @@ method2/logs/
 method2/old/
 method2/batches/
 method2/backup/
+method2/p1_final.csv
+
 
 # OS junk
 .DS_Store
