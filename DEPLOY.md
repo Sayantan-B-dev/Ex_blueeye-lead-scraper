@@ -1,310 +1,234 @@
-# Deployment Guide — Google Maps Lead Scraper
+# Deployment — Method 2 (gosom Docker) to Cloud VM
 
-You have **2,025 queries** across 3 priorities. Total runtime locally:
-- **Method 1 (Playwright):** ~7–14h (depends on concurrency, headless mode)
-- **Method 2 (gosom Docker):** ~9–14h (depends on `--concurrent` and `-c 4`)
-
-Running this on your PC for 10+ hours at 70–75°C is safe (CPUs throttle at 95–100°C), but for convenience, reliability, and zero power bills, deploy to the cloud.
+Step-by-step from your **local machine** to a **cloud VM** and back.
 
 ---
 
-## Option 1: Oracle Cloud ARM (Always Free — Recommended)
+## Prerequisites
 
-**Specs:** 4 vCPU (Ampere Ampere A1), 24 GB RAM, 200 GB disk — **free forever**. No idle limits. Runs Docker natively.
+- Your project is at: `G:\code\Web techs\projects\BlueEye\scraping_info`
+- You have SSH access to a cloud VM (Oracle ARM, Hetzner, etc.)
+- Docker is installed on the VM (see below)
 
-### 1. Sign Up
+---
 
-Go to [cloud.oracle.com](https://cloud.oracle.com) → **Create Free Account**. Requires credit card for identity verification (not charged unless you upgrade). You get $300 in credits + Always Free resources.
+## Step 1: Create a VM
 
-### 2. Create an ARM Instance
+### Oracle ARM (Free)
 
-| Field | Value |
-|-------|-------|
-| Image | **Ubuntu 22.04** (or 24.04 LTS) |
-| Shape | **VM.Standard.A1.Flex** (ARM) |
-| OCPUs | **4** (max for free) |
-| Memory | **24 GB** (max for free) |
-| Boot volume | **200 GB** |
-| SSH keys | **Paste your public key** (`id_rsa.pub`) |
+1. Sign up at [cloud.oracle.com](https://cloud.oracle.com)
+2. Create VM: **Ubuntu 22.04**, Shape **VM.Standard.A1.Flex**, 4 OCPUs, 24 GB RAM
+3. Add your SSH public key, open port 22
+4. Note the public IP
 
-**Region tip:** ARM availability varies. Try **Mumbai**, **Hyderabad**, **São Paulo**, or **Frankfurt** if your primary region shows "Out of capacity." Create a **compartment** first if prompted.
+### Hetzner (~$0.35)
 
-### 3. SSH & Install Docker
+1. Sign up at [hetzner.cloud](https://hetzner.cloud)
+2. Create server: **Ubuntu 22.04**, **CX32** (4 vCPU, 8 GB)
+3. Add your SSH key
+4. Note the IP
+
+---
+
+## Step 2: Install Docker on the VM
 
 ```bash
-ssh ubuntu@<your-instance-public-ip>
+# From your local machine — SSH into the VM
+ssh ubuntu@<vm-ip>          # Oracle
+ssh root@<vm-ip>            # Hetzner
 
-# Update & install Docker
-sudo apt update && sudo apt install -y docker.io
+# Install Docker
+sudo apt update && sudo apt install -y docker.io tmux
 sudo systemctl enable --now docker
 sudo usermod -aG docker $USER
 
-# Log out and back in for group to take effect
+# Exit and reconnect for group to take effect
 exit
-ssh ubuntu@<your-instance-ip>
+ssh ubuntu@<vm-ip>          # reconnect
+docker --version            # verify
+```
+
+---
+
+## Step 3: Upload method2 to the VM
+
+**From your local machine** (Git Bash, PowerShell, or CMD):
+
+```bash
+# Git Bash — upload the entire method2 folder
+scp -r "G:/code/Web techs/projects/BlueEye/scraping_info/method2" ubuntu@<vm-ip>:~/
+```
+
+For large transfers, use `rsync` (faster, shows progress, resume-capable):
+
+```bash
+# Git Bash
+rsync -avz --progress "G:/code/Web techs/projects/BlueEye/scraping_info/method2/" ubuntu@<vm-ip>:~/method2/
+```
+
+> **Windows CMD note:** If using CMD/PowerShell, replace the path with:
+> ```cmd
+> scp -r "G:\code\Web techs\projects\BlueEye\scraping_info\method2" ubuntu@<vm-ip>:~/
+> ```
+
+---
+
+## Step 4: Pull the Docker Image
+
+```bash
+ssh ubuntu@<vm-ip>
+
+# One-time pull (takes ~1-2 min)
+docker pull gosom/google-maps-scraper
 
 # Verify
-docker --version
+docker images | grep google-maps
 ```
-
-### 4. Upload Project
-
-```bash
-# From your local machine
-scp -r /path/to/scraping_info ubuntu@<ip>:~/
-
-# Alternatively, use rsync (faster for subsequent runs):
-rsync -avz --progress /path/to/scraping_info/ ubuntu@<ip>:~/scraping_info/
-```
-
-### 5. Run Method 2 (Docker)
-
-```bash
-ssh ubuntu@<ip>
-cd ~/scraping_info/method2
-
-# Run all 9 batches with 3 parallel containers
-./run.sh --concurrent 3
-```
-
-### 6. Run Method 1 (Playwright) — Optional
-
-Method 1 needs Chromium which works on ARM:
-
-```bash
-ssh ubuntu@<ip>
-cd ~/scraping_info/method1
-
-# Install dependencies
-pip install playwright pandas nest-asyncio
-playwright install chromium
-
-# Generate city batches
-python split_batches.py
-
-# Run with 3 parallel scrapers
-python run_all.py --phase 1 --max-concurrent 3
-
-# After P1, run P2 (+ maybe P3)
-python run_all.py --phase 2 --max-concurrent 3
-python run_all.py --phase 3 --max-concurrent 3
-```
-
-### 7. Download Results
-
-```bash
-# Method 2 results
-scp -r ubuntu@<ip>:~/scraping_info/method2/output/*.csv /local/path/method2/
-
-# Method 1 results
-scp -r ubuntu@<ip>:~/scraping_info/method1/output/csv/ /local/path/method1/
-```
-
-### 8. Keep Alive (tmux)
-
-SSH disconnects kill running processes. Use `tmux`:
-
-```bash
-sudo apt install -y tmux
-tmux new -s scrape
-
-# Inside tmux — run your scraper
-cd ~/scraping_info/method2 && ./run.sh
-
-# Detach: Ctrl+B then D
-# Reattach: tmux attach -t scrape
-# List sessions: tmux ls
-```
-
-### Estimated Cost
-
-**$0** — everything is within Oracle's Always Free tier.
 
 ---
 
-## Option 2: Hetzner Cloud VPS (~$0.35 one-time)
-
-Cheapest dedicated compute. Good for a single 14-hour run.
-
-### Pricing
-
-| Plan | vCPU | RAM | Hourly | 14 hours |
-|------|------|-----|--------|----------|
-| CX22 | 2 | 4 GB | €0.009 | €0.13 |
-| CX32 | 4 | 8 GB | €0.019 | €0.27 |
-| CX42 | 8 | 16 GB | €0.037 | €0.52 |
-
-A **CX32** (4 vCPU, 8 GB) is ideal. Total: **~€0.27 (~$0.30)**.
-
-### Setup
-
-1. **Sign up** at [hetzner.cloud](https://hetzner.cloud) (requires ~€5 deposit)
-2. **Create project → Add server:**
-   - Image: **Ubuntu 22.04**
-   - Type: **CX32** (or CX42 for faster)
-   - Add your SSH key
-3. **SSH in & install Docker:**
+## Step 5: Run the Scraper (with tmux)
 
 ```bash
-ssh root@<server-ip>
-apt update && apt install -y docker.io tmux
-systemctl enable --now docker
+# Start a tmux session so it keeps running after you disconnect
+tmux new -s scrape
+
+# Go to the project
+cd ~/method2
+
+# Make run.sh executable
+chmod +x run.sh
+
+# Run — 3 parallel Docker containers by default
+./run.sh
+
+# Or adjust concurrency:
+./run.sh --concurrent 2       # lighter on CPU
+./run.sh --concurrent 4       # faster if CPU/bandwidth allows
 ```
 
-4. **Upload & run:**
+**Tmux controls:**
+- **Detach** (leave running): `Ctrl+B` then `D`
+- **Reattach** (check progress): `tmux attach -t scrape`
+- **List sessions**: `tmux ls`
+
+---
+
+## Step 6: Monitor Progress
+
+While the scraper runs, you can check:
 
 ```bash
-# Local machine
-rsync -avz --progress /path/to/scraping_info/ root@<ip>:~/scraping_info/
+# See live output (without reattaching tmux)
+tail -f ~/method2/logs/*.log
 
-# SSH back
-ssh root@<ip>
+# Check CSV sizes growing
+watch -n 10 'wc -l ~/method2/output/*.csv'
+
+# Check CPU/memory
+htop
+```
+
+---
+
+## Step 7: Download Results
+
+**After the scraper finishes**, from your local machine:
+
+```bash
+# Download all batch CSVs
+scp ubuntu@<vm-ip>:~/method2/output/batch_*.csv "G:/code/Web techs/projects/BlueEye/scraping_info/method2/output/"
+
+# Also download logs
+scp ubuntu@<vm-ip>:~/method2/logs/*.log "G:/code/Web techs/projects/BlueEye/scraping_info/method2/logs/"
+```
+
+Or merge on the VM first, then download just the final file:
+
+```bash
+# On the VM
+cd ~/method2
+python3 merge.py    # creates final.csv
+
+# Back on local machine
+scp ubuntu@<vm-ip>:~/method2/final.csv "G:/code/Web techs/projects/BlueEye/scraping_info/method2/"
+```
+
+---
+
+## Step 8: Merge Locally
+
+After downloading CSVs, merge on your machine:
+
+```bash
+cd "G:/code/Web techs/projects/BlueEye/scraping_info/method2"
+python merge.py --pattern "output/batch_*.csv" --output final.csv
+```
+
+Open `method2/view.html` in a browser and drag `final.csv` to browse leads.
+
+---
+
+## Resume After Interruption
+
+If the scraper is interrupted mid-run (e.g., VM restart):
+
+```bash
+ssh ubuntu@<vm-ip>
+cd ~/method2
 tmux new -s scrape
-cd ~/scraping_info/method2 && ./run.sh
+
+# Just rerun — it skips completed batches automatically
+./run.sh
+```
+
+To kill a stuck container:
+```bash
+docker kill $(docker ps -q)
+```
+
+---
+
+## Full Command Summary
+
+```bash
+# === LOCAL MACHINE ===
+
+# Upload
+scp -r "G:/code/Web techs/projects/BlueEye/scraping_info/method2" ubuntu@<vm-ip>:~/
+
+# === VM ===
+
+# Install Docker + tmux
+sudo apt install -y docker.io tmux
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+exit  # reconnect
+
+# Pull image
+docker pull gosom/google-maps-scraper
+
+# Run
+tmux new -s scrape
+cd ~/method2 && chmod +x run.sh && ./run.sh
 # Ctrl+B, D to detach
+
+# === LOCAL MACHINE (after done) ===
+
+# Download
+scp ubuntu@<vm-ip>:~/method2/output/batch_*.csv "G:/code/Web techs/projects/BlueEye/scraping_info/method2/output/"
+
+# Merge
+cd "G:/code/Web techs/projects/BlueEye/scraping_info/method2"
+python merge.py
 ```
-
-5. **Download & delete server:**
-
-```bash
-scp root@<ip>:~/scraping_info/method2/output/*.csv /local/path/
-```
-
-Then **delete the server** in Hetzner dashboard (or it keeps billing).
-
-### Estimated Cost
-
-**~€0.30 (~$0.35)** for CX32 at 14 hours.
 
 ---
 
-## Option 3: Google Colab (Free, Limited)
+## VM Cleanup
 
-Use Colab for **method1 only** (no Docker). Best for testing small batches, not full runs.
+### Oracle (free, keep forever)
+No action needed — ARM instances are always free.
 
-### Limitations
-
-- **~90 min runtime cap** — session disconnects
-- **No Docker** — method2 won't work
-- **No persistent storage** — files lost on disconnect
-- **Shared CPU** — slower than dedicated
-
-### Setup
-
-1. Open [colab.research.google.com](https://colab.research.google.com)
-2. **Runtime → Change runtime type → CPU** (free GPU not needed)
-3. Install dependencies:
-
-```python
-!pip install playwright nest-asyncio pandas
-!playwright install chromium
-```
-
-4. Upload your batch file + `scraper.py`:
-
-```python
-from google.colab import files
-import os
-os.makedirs("input", exist_ok=True)
-
-print("Upload scraper.py")
-files.upload()
-
-print("Upload batch file (e.g. p1_Mumbai.txt)")
-files.upload()
-```
-
-5. Run:
-
-```python
-!python scraper.py --input p1_Mumbai.txt --output results.csv --headless
-```
-
-6. Download results:
-
-```python
-files.download("results.csv")
-```
-
-### Estimated Cost
-
-**$0** — but only practical for 1–2 batches per session.
-
----
-
-## Option 4: GitHub Codespaces (Free Hours)
-
-If you have a GitHub account, you get **60 free hours/month** (2-core) or **30 hours/month** (4-core) on Codespaces.
-
-### Setup
-
-1. Open your repo on GitHub → **Code → Create codespace on main**
-2. Terminal opens in browser with full VS Code
-
-```bash
-# Docker is pre-installed
-cd method2
-./run.sh --concurrent 2
-```
-
-3. Results persist as long as the codespace exists. Download via VS Code file explorer.
-
-### Estimated Cost
-
-**$0** — within free tier hours.
-
----
-
-## Option 5: AWS EC2 / Azure VM
-
-Use only if you already have credits. Not cost-effective for a one-time job.
-
-| Provider | Cheapest option | 14h cost |
-|----------|----------------|----------|
-| AWS EC2 t4g.medium (2 vCPU ARM, 4 GB) | ~$0.033/h | ~$0.46 |
-| Azure B2s (2 vCPU, 4 GB) | ~$0.041/h | ~$0.57 |
-| Google Cloud e2-medium (2 vCPU, 4 GB) | ~$0.024/h | ~$0.34 |
-
-Setup is similar to Hetzner — create VM → install Docker → upload → run.
-
----
-
-## Comparison
-
-| Option | Cost | Time Cap | Docker | Persistent | Setup Time |
-|--------|------|----------|--------|------------|------------|
-| Oracle ARM | $0 | None | ✅ | ✅ | 20 min |
-| Hetzner CX32 | ~$0.35 | None | ✅ | ✅ | 15 min |
-| Google Colab | $0 | ~90 min | ❌ | ❌ | 10 min |
-| GitHub Codespaces | $0 | ~60 h/mo | ✅ | ✅ | 5 min |
-| AWS EC2 t4g | ~$0.46 | None | ✅ | ✅ | 20 min |
-
-## Quick Decision
-
-- **Don't want to pay?** → Oracle ARM (free forever) or GitHub Codespaces (free hours)
-- **Want it done in one shot with zero hassle?** → Hetzner CX32 (~$0.35)
-- **Just testing a few queries?** → Colab (free)
-- **Already have AWS/Azure credits?** → Use those
-
-## Dockerfile for Method 1 (Playwright)
-
-If you want to run method1 anywhere with just `docker run`:
-
-```dockerfile
-FROM python:3.11-slim
-
-RUN pip install playwright nest-asyncio pandas && \
-    playwright install chromium
-
-WORKDIR /app
-COPY method1/ .
-
-CMD ["python", "run_all.py", "--phase", "1"]
-```
-
-Build and run:
-
-```bash
-docker build -t maps-scraper -f Dockerfile .
-docker run --rm maps-scraper
-```
+### Hetzner (paid)
+Delete the server in Hetzner dashboard to stop billing.
