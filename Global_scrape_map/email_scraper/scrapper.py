@@ -180,7 +180,7 @@ async def fetch_shallow(session, website):
     return [], "ok_no_email"
 
 
-async def process_country(csv_path, is_shallow):
+async def process_country(csv_path, is_shallow, is_deep=False):
     country = csv_path.stem
     out_path = OUTPUT_DIR / csv_path.name
     log_path = LOG_DIR / f"{country}.log"
@@ -225,8 +225,13 @@ async def process_country(csv_path, is_shallow):
             pr = prev_rows[w]
             pe = pr.get("emails", "").strip()
             ps = pr.get("website_status", "").strip()
-            if pe or ps:
+            if pe:
                 row["emails"] = pe
+                row["website_status"] = ps
+                skipped += 1
+                continue
+            # deep: retry even if status set but no emails found
+            if not is_deep and ps:
                 row["website_status"] = ps
                 skipped += 1
                 continue
@@ -235,8 +240,9 @@ async def process_country(csv_path, is_shallow):
             skipped += 1
             continue
 
-        # For shallow pass, only process rows that were ok_no_email in fast pass
-        if is_shallow and s != "ok_no_email":
+        # default shallow: only rows that homepage returned ok_no_email
+        # --deep: retry everything (ok_no_email + errors) but not rows with emails
+        if is_shallow and not is_deep and s != "ok_no_email":
             skipped += 1
             continue
 
@@ -253,7 +259,8 @@ async def process_country(csv_path, is_shallow):
             tmp.replace(out_path)
         return
 
-    print(f"{country:25s} {len(to_scrape):>6} to scan  (resume_skip={skipped})")
+    label = "deep" if is_deep else "shallow" if is_shallow else "fast"
+    print(f"{country:25s} {len(to_scrape):>6} to scan [{label}]  (skip={skipped})")
 
     connector = aiohttp.TCPConnector(limit=CONCURRENCY, limit_per_host=5, force_close=True)
     timeout = ClientTimeout(total=TIMEOUT + 3)
@@ -267,11 +274,13 @@ async def process_country(csv_path, is_shallow):
         next_save = 50
         save_lock = asyncio.Lock()
 
+        use_shallow = is_shallow or is_deep
+
         async def worker(idx):
             nonlocal found, no_email, errors, done, next_save
             website = rows[idx].get("website", "").strip()
             try:
-                if is_shallow:
+                if use_shallow:
                     emails, status = await fetch_shallow(session, website)
                 else:
                     emails, status = await fetch_homepage(session, website)
@@ -323,28 +332,36 @@ async def process_country(csv_path, is_shallow):
 
 
 async def main():
+    is_deep = "--deep" in sys.argv
     is_shallow = "--shallow" in sys.argv
     if "--fast" in sys.argv:
         is_shallow = False
+        is_deep = False
 
     global semaphore
     semaphore = asyncio.Semaphore(CONCURRENCY)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    source_dir = OUTPUT_DIR if is_shallow else INPUT_DIR
+    source_dir = OUTPUT_DIR if (is_shallow or is_deep) else INPUT_DIR
     csv_files = sorted(source_dir.glob("*.csv"))
     if not csv_files:
         print(f"No CSVs found in {source_dir}")
         sys.exit(1)
 
-    print(f"Mode: {'shallow' if is_shallow else 'fast (homepage only)'}")
+    mode_label = "fast (homepage only)"
+    if is_shallow:
+        mode_label = "shallow (ok_no_email only)"
+    if is_deep:
+        mode_label = "deep (shallow crawl, retry all failures)"
+
+    print(f"Mode: {mode_label}")
     print(f"Input:  {source_dir}")
     print(f"Output: {OUTPUT_DIR}")
     print()
 
     for csv_path in csv_files:
-        await process_country(csv_path, is_shallow=is_shallow)
+        await process_country(csv_path, is_shallow=is_shallow, is_deep=is_deep)
 
 
 if __name__ == "__main__":
