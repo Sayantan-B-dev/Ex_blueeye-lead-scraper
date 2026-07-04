@@ -290,7 +290,7 @@ def print_rich_dashboard(results, source):
     pan4 = Panel(t4, title="[bold]Email Enrichment Performance[/]", border_style="magenta")
 
     console.print()
-    console.print(Panel(f"[bold]Analysis Report[/] — [cyan]{source}/[/] — [white]{len(results)} files[/] — [dim]{datetime.now():%Y-%m-%d %H:%M}[/]", border_style="bright_yellow"))
+    console.print(Panel(f"[bold]Lead Quality Report[/] — [cyan]{source}/[/] — [white]{len(results)} files[/] — [dim]{datetime.now():%Y-%m-%d %H:%M}[/]", border_style="bright_yellow"))
     console.print(Columns([pan1, pan2], equal=True))
     console.print(Columns([pan3, pan4], equal=True))
     console.print(Panel(t5, title=f"[bold]Per-Country Breakdown ({len(results)} countries)[/]", border_style="bright_yellow"))
@@ -329,7 +329,7 @@ def generate_txt(results, source):
     top10 = sorted(all_top_domains.items(), key=lambda x: -x[1])[:10]
 
     lines.append(sep)
-    lines.append("  EMAIL SCRAPER — COMPREHENSIVE ANALYSIS REPORT")
+    lines.append("  LEAD QUALITY — COMPREHENSIVE ANALYSIS REPORT")
     lines.append(f"  Folder: {source}/    Files: {len(results)}    Generated: {datetime.now():%Y-%m-%d %H:%M}")
     lines.append(sep)
 
