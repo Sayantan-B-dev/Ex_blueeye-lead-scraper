@@ -49,6 +49,7 @@ Global_scrape_map/email_scraper/cleaned_missing_emails/
 Global_scrape_map/email_scraper/no_missing_emails/
 Global_scrape_map/email_scraper/logs/
 Global_scrape_map/email_scraper/report.csv
+Global_scrape_map/email_scraper/report.txt
 
 
 # All log files (runtime artifacts)
