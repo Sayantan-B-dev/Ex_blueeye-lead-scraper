@@ -1,10 +1,11 @@
 """
-Global Google Maps scraper using gosom/google-maps-scraper Docker containers.
-4 parallel containers. Each country-state batch produces a CSV with
-`country` and `state` columns appended. One CSV per country. One log per country.
+Global Google Maps scraper — mirrors method2/run.sh pattern:
+  -fast-mode -geo per country, output redirected to log file,
+  resume via CSV row check, PID tracking via subprocess.Popen.
 """
 
 import argparse
+import os
 import subprocess
 import sys
 import time
@@ -14,6 +15,7 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 import pandas as pd
+from geo_data import get_geo
 
 ROOT = Path(__file__).parent
 BATCHES_DIR = ROOT / "batches"
@@ -22,15 +24,8 @@ LOG_DIR = ROOT / "logs"
 IMAGE_NAME = "gosom/google-maps-scraper:latest"
 MAX_CONCURRENT = 4
 
-
-def slugify(text):
-    return text.replace(" ", "_").replace("/", "_").replace(",", "").replace("-", "_")
-
-
-def log_write(log_file, message):
-    timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
-    with log_file.open("a", encoding="utf-8") as f:
-        f.write(f"[{timestamp}] {message}\n")
+DOCKER_ENV = os.environ.copy()
+DOCKER_ENV["MSYS_NO_PATHCONV"] = "1"
 
 
 def parse_batch_file(batch_file):
@@ -38,6 +33,17 @@ def parse_batch_file(batch_file):
     parts = first.split(" in ", 1)[1]
     state, country = parts.rsplit(", ", 1)
     return country, state
+
+
+def csv_rows(path):
+    """Return number of data rows in a CSV (method2-style resume check)."""
+    if not path.exists():
+        return 0
+    try:
+        df = pd.read_csv(path, encoding="utf-8-sig")
+        return len(df)
+    except Exception:
+        return 0
 
 
 def run():
@@ -64,67 +70,93 @@ def run():
         print("Run split_queries.py first.")
         sys.exit(1)
 
-    # Build pending list — collect all batches not yet marked .done
+    # Migration: if country CSV has data but no .done files exist yet,
+    # create .done markers for its batches so they aren't re-scraped.
+    existing_countries = set()
+    for f in OUTPUT_DIR.glob("*.csv"):
+        if not f.name.startswith(".tmp") and csv_rows(f) > 0:
+            existing_countries.add(f.stem)
+
+    # Build pending list — resume: skip if .done marker exists
     pending = []
-    done_total = 0
+    skipped = 0
     for batch_file in batch_files:
         stem = batch_file.stem
+        country, state = parse_batch_file(batch_file)
         done_file = OUTPUT_DIR / f"{stem}.done"
         if done_file.exists():
-            done_total += 1
+            skipped += 1
             continue
-
-        country, state = parse_batch_file(batch_file)
+        # If country CSV already has data, mark this batch done
+        if country in existing_countries:
+            done_file.write_text("", encoding="utf-8")
+            skipped += 1
+            continue
+        # Also skip if temp CSV has data (container was mid-run on crash)
+        temp_csv = OUTPUT_DIR / f".tmp_{stem}.csv"
+        if csv_rows(temp_csv) > 0:
+            temp_csv.unlink()
+            done_file.write_text("", encoding="utf-8")
+            skipped += 1
+            continue
         pending.append((country, state, batch_file))
 
     total_pending = len(pending)
-    total_all = done_total + total_pending
+    total_all = skipped + total_pending
 
     if not pending:
-        print(f"All {total_all} batches already done. Nothing to run.")
+        total_leads = sum(csv_rows(OUTPUT_DIR / f.name) for f in OUTPUT_DIR.glob("*.csv") if not f.name.startswith(".tmp"))
+        print(f"ALL DONE -- {total_all} batches, {total_leads} total leads")
         return
 
-    print(f"Global scraper — {total_all} total batches, {total_pending} pending")
+    print(f"Global scraper -- {total_all} total batches, {total_pending} to run")
     print(f"  Concurrency: {max_concurrent}, Image: {image_name}")
     print(f"  Output: {OUTPUT_DIR}/")
     print(f"  Logs:   {LOG_DIR}/")
     print()
 
-    # Verify Docker availability
+    # Verify Docker responsive
     try:
         subprocess.run(
-            ["docker", "info"],
-            capture_output=True, text=True, check=True, timeout=10
+            ["docker", "version", "--format", "{{.Server.Version}}"],
+            capture_output=True, timeout=15, env=DOCKER_ENV,
+            check=True,
         )
-    except (subprocess.CalledProcessError, FileNotFoundError):
+    except Exception:
         print("ERROR: Docker is not running or not found.")
         print("Start Docker Desktop and try again.")
         sys.exit(1)
 
-    # Verify image is pulled
+    # Verify/pull image
     result = subprocess.run(
         ["docker", "image", "inspect", image_name],
-        capture_output=True, text=True, timeout=30,
+        capture_output=True, text=True, timeout=30, env=DOCKER_ENV,
     )
     if result.returncode != 0:
         print(f"Pulling Docker image: {image_name} ...")
         subprocess.run(
             ["docker", "pull", image_name],
-            check=True, timeout=300,
+            check=True, timeout=300, env=DOCKER_ENV,
         )
 
+    # Pre-create empty CSVs so gosom can write (matching method2)
+    for _, _, batch_file in pending:
+        temp_csv = OUTPUT_DIR / f".tmp_{batch_file.stem}.csv"
+        temp_csv.write_text("", encoding="utf-8")
+
+    # Launch containers in waves — method2 pattern
     index = 0
-    procs = {}
+    procs = {}  # stem -> Popen object
     completed = 0
     failed = 0
 
     while index < len(pending) or procs:
         while len(procs) < max_concurrent and index < len(pending):
             country, state, batch_file = pending[index]
-            batch_stem = batch_file.stem
-            temp_csv_name = f".tmp_{batch_stem}.csv"
-            temp_csv = OUTPUT_DIR / temp_csv_name
-            log_file = LOG_DIR / f"{slugify(country)}.log"
+            stem = batch_file.stem
+            temp_csv = OUTPUT_DIR / f".tmp_{stem}.csv"
+            log_file = LOG_DIR / f"{stem}.log"
+            geo = get_geo(country)
 
             cmd = [
                 "docker", "run", "--rm",
@@ -133,87 +165,90 @@ def run():
                 "-v", f"{OUTPUT_DIR}:/out",
                 image_name,
                 "-input", "/queries.txt",
-                "-results", f"/out/{temp_csv_name}",
+                "-results", f"/out/{temp_csv.name}",
                 "-depth", "60",
                 "-fast-mode",
+                "-geo", geo,
                 "-c", "12",
                 "-exit-on-inactivity", "3m",
             ]
 
-            log_write(log_file, f"LAUNCH: {batch_stem}")
-            print(f"  [{index+1}/{total_pending}] {batch_stem} -- launching...")
+            print(f"  {stem} -- launching... (geo: {geo})")
 
-            proc = subprocess.Popen(
-                cmd,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                text=True,
-            )
-            procs[proc.pid] = (proc, country, state, batch_file, log_file, temp_csv, batch_stem)
+            with log_file.open("a", encoding="utf-8") as lf:
+                proc = subprocess.Popen(
+                    cmd,
+                    stdout=lf,
+                    stderr=subprocess.STDOUT,
+                    env=DOCKER_ENV,
+                )
+
+            procs[stem] = (proc, country, state, temp_csv, log_file)
             index += 1
 
-        if not procs:
-            break
+        # Poll running containers every 5s (method2 pattern)
+        while procs:
+            for stem in list(procs.keys()):
+                proc, country, state, temp_csv, log_file = procs[stem]
+                if proc.poll() is not None:
+                    proc.wait()
+                    del procs[stem]
 
-        for pid in list(procs.keys()):
-            proc, country, state, batch_file, log_file, temp_csv, batch_stem = procs[pid]
-            if proc.poll() is not None:
-                stdout, stderr = proc.communicate()
+                    done_file = OUTPUT_DIR / f"{stem}.done"
+                    rows = csv_rows(temp_csv)
+                    if rows > 0:
+                        try:
+                            df = pd.read_csv(temp_csv, encoding="utf-8-sig")
+                            if not df.empty:
+                                df["country"] = country
+                                df["state"] = state
 
-                if proc.returncode == 0 and temp_csv.exists():
-                    try:
-                        df = pd.read_csv(temp_csv, encoding="utf-8-sig")
-                        if not df.empty:
-                            df["country"] = country
-                            df["state"] = state
+                                country_csv = OUTPUT_DIR / f"{country}.csv"
+                                file_exists = country_csv.exists() and country_csv.stat().st_size > 0
+                                # Validate existing CSV before appending (crash safety)
+                                if file_exists:
+                                    try:
+                                        pd.read_csv(country_csv, encoding="utf-8-sig", nrows=1)
+                                    except Exception:
+                                        file_exists = False
+                                df.to_csv(
+                                    country_csv, mode="a" if file_exists else "w",
+                                    header=not file_exists,
+                                    index=False, encoding="utf-8-sig"
+                                )
 
-                            country_csv = OUTPUT_DIR / f"{country}.csv"
-                            file_exists = country_csv.exists() and country_csv.stat().st_size > 0
-                            df.to_csv(
-                                country_csv, mode="a" if file_exists else "w",
-                                header=not file_exists,
-                                index=False, encoding="utf-8-sig"
-                            )
-
-                            msg = f"OK: {batch_stem} -- {len(df)} rows -> {country_csv.name}"
-                            log_write(log_file, msg)
-                            print(f"  + {batch_stem} -- {len(df)} leads -> {country_csv.name}")
+                                print(f"  {stem} -- done ({rows} leads -> {country_csv.name})")
+                                done_file.write_text("", encoding="utf-8")
+                                completed += 1
+                            else:
+                                print(f"  {stem} -- empty CSV")
+                                failed += 1
+                        except Exception as e:
+                            print(f"  {stem} -- post-process error: {e}")
+                            failed += 1
+                    else:
+                        exit_code = proc.returncode
+                        if exit_code != 0:
+                            print(f"  {stem} -- FAILED (exit={exit_code})")
+                            failed += 1
                         else:
-                            msg = f"EMPTY: {batch_stem} -- 0 results"
-                            log_write(log_file, msg)
-                            print(f"  ~ {batch_stem} -- 0 results")
-                    except Exception as e:
-                        msg = f"ERROR processing {batch_stem}: {e}"
-                        log_write(log_file, msg)
-                        print(f"  ! {batch_stem} -- post-process error: {e}")
-                        failed += 1
+                            print(f"  {stem} -- 0 results")
+                            done_file.write_text("", encoding="utf-8")
+                            completed += 1
 
+                    # Clean up temp file
                     if temp_csv.exists():
                         temp_csv.unlink()
-                else:
-                    msg = f"FAILED: {batch_stem} (exit={proc.returncode})"
-                    log_write(log_file, msg)
-                    if stdout:
-                        log_write(log_file, f"  stdout: {stdout[-500:]}")
-                    if stderr:
-                        log_write(log_file, f"  stderr: {stderr[-500:]}")
-                    print(f"  ! {batch_stem} -- Docker failed (exit={proc.returncode})")
-                    failed += 1
 
-                done_file = OUTPUT_DIR / f"{batch_stem}.done"
-                done_file.write_text(f"OK {time.time()}\n", encoding="utf-8")
+                    remaining = total_pending - (completed + failed + len(procs))
+                    print(f"  Progress: {completed} done, {failed} failed, {remaining} left")
+                    print()
+                    break
 
-                completed += 1
-                remaining = total_pending - completed
-                print(f"  Progress: {completed}/{total_pending} done, {remaining} left")
-                print()
+            if procs:
+                time.sleep(5)
 
-                del procs[pid]
-                break
-
-        if procs:
-            time.sleep(3)
-
+    print()
     print("=" * 55)
     print(f"  ALL DONE -- {completed} batches processed")
     if failed:
