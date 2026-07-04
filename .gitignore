@@ -50,8 +50,6 @@ Global_scrape_map/email_scraper/no_missing_emails/
 Global_scrape_map/email_scraper/logs/
 Global_scrape_map/email_scraper/report.csv
 
-# Misc data archives
-data.zip
 
 # All log files (runtime artifacts)
 *.log
