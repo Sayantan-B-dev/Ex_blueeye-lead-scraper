@@ -8,65 +8,73 @@ Scrapes Google Maps for event/wedding businesses. Two scopes: **27 Indian cities
 
 **Location:** `Global_scrape_map/`
 
-Scrapes 59 countries using gosom Docker containers (4 parallel, fast mode). 26,143 queries, 2,011 state-level batches.
+Scrapes 59 countries using gosom Docker containers (4 parallel, fast mode). 26,143 queries, 2,011 state-level batches. **74,128 leads** collected.
 
-### Run
+### Pipeline
 
 ```bash
+# 1. Docker scrape (59 countries)
 cd Global_scrape_map
 ./run.bat
+
+# 2. Clean rows without phone + website
+cd email_scraper
+python clean.py
+
+# 3. Email enrichment (recommended: both passes)
+python scrapper.py --both       # fast → deep, fully automatic
+
+# 4. Analytics dashboard
+python analytics.py --source no_missing_emails
 ```
 
-### Email Enrichment
+### Scraper Modes
 
-Async email extractor (aiohttp, 50 concurrent):
+| Command | Input | Scrape | Target |
+|---------|-------|--------|--------|
+| `scrapper.py --fast` | `cleaned_missing_emails/` | Homepage only | All rows without email |
+| `scrapper.py --deep` | `no_missing_emails/` | Shallow (up to 5 pages) | Rows still missing email |
+| `scrapper.py --both` | Both in sequence | fast → deep | Full pipeline, one command |
+
+Auto-resume via CSV — crash-safe, no `--resume` flag needed.
+
+### Analytics
+
+Rich dashboard with per-country breakdowns, coverage, website status, email performance, intersections, and top domains. Generates `report.txt` + `report.csv`.
 
 ```bash
-cd Global_scrape_map\email_scraper
-python clean.py                  # Remove rows missing phone AND website
-python scrapper.py --fast        # Homepage-only email extraction
-python scrapper.py               # Shallow crawl on remaining
+python analytics.py --source no_missing_emails          # post-email-enrichment (default)
+python analytics.py --source missing_emails             # raw email scrape output
+python analytics.py --source cleaned_missing_emails      # pre-enrichment
 ```
 
-Auto-resume via logs. Outputs to `no_missing_emails/`.
-
-### Results
+### Results (post-enrichment)
 
 | Metric | Value |
 |--------|-------|
 | Countries | 59 |
-| Total leads | 74,128 |
-| Missing only phone | 3,229 |
-| Missing only website | 15,620 |
-| Missing both | 3,038 |
+| Total leads | 71,090 (after clean) |
+| Has website | 55,470 (78.0%) |
+| Has phone | 67,861 (95.5%) |
+| Has email | 32,811 (46.2%) |
+| All three | 31,046 (43.7%) |
+| Email hit rate | 59.2% of websites |
 | Total CSV size | ~35 MB |
 
 ---
 
 ## India Scrape (27 Cities)
 
-Two independent methods for 2,025 queries across 27 Indian cities.
-
 ### Method 2: gosom Docker (Go) — Primary
 
 **Location:** `method2/`
 
-Uses [gosom/google-maps-scraper](https://github.com/gosom/google-maps-scraper).
+**P1 complete:** 5,874 leads. Uses [gosom/google-maps-scraper](https://github.com/gosom/google-maps-scraper).
 
 ```bash
 cd method2
 ./run.sh
 ```
-
-| Feature | Detail |
-|---------|--------|
-| Results/query | ~80–180 (depth 20) |
-| Email extraction | `-email` flag |
-| Resume | Skips batch if CSV has data |
-| Columns | 33+ fields |
-| Speed | ~5–8 min/query |
-
-**P1 complete:** 5,874 leads in `p1_final.csv`.
 
 ### Method 1: Playwright (Python)
 
@@ -92,24 +100,35 @@ python scraper_v1.py
 
 ```
 scraping_info/
-├── README.md                     # This file
-├── AGENTS.md                     # Full project state & conventions
-├── DEPLOY.md                     # Cloud deployment guide
+├── README.md
+├── AGENTS.md
+├── DEPLOY.md
 ├── .gitignore
+├── data/                         # Data archives (gitignored)
 ├── method1/                      # Playwright scraper (India cities)
 ├── method2/                      # gosom Docker scraper (India P1 done)
-├── taskFetchEmail/               # Legacy email enrichment (requests)
+├── taskFetchEmail/               # Legacy email enrichment
 └── Global_scrape_map/            # Global 59-country scraper
+    ├── run.bat / run.ps1         # Convenience launchers
+    ├── country.txt               # 59 target countries
+    ├── data_tags.json            # 13 search tags
+    ├── states.json               # Country → state subdivisions
+    ├── queries.json              # 26,143 queries
+    ├── expand_country.py         # Generate states.json
+    ├── generate_queries.py       # Generate queries.json
     ├── global_scraper/
     │   ├── run.py                # Docker orchestrator
     │   ├── split_queries.py      # Batch generator
     │   ├── geo_data.py           # Country coordinates
     │   ├── analytics.py          # Lead quality report
-    │   └── output/               # Per-country CSVs (gitignored)
+    │   ├── batches/              # (gitignored)
+    │   ├── output/               # (gitignored) Per-country CSVs
+    │   └── logs/                 # (gitignored)
     └── email_scraper/
-        ├── scrapper.py           # Async email extractor (aiohttp)
-        ├── clean.py              # Removes rows with no phone/website
-        ├── analytics.py          # Email-less analytics
+        ├── scrapper.py           # Async email extractor
+        ├── clean.py              # Remove rows with no phone/website
+        ├── analytics.py          # Full analytics dashboard
+        ├── report.csv / .txt     # Generated reports
         ├── missing_emails/        # (gitignored)
         ├── cleaned_missing_emails/ # (gitignored)
         ├── no_missing_emails/     # (gitignored)
@@ -119,18 +138,14 @@ scraping_info/
 ## Quick Start
 
 ```bash
-# Global scrape (59 countries)
+# Global scrape → clean → enrich → analyze
 cd Global_scrape_map
 ./run.bat
-
-# Clean and enrich emails
 cd email_scraper
 python clean.py
-python scrapper.py --fast
-python scrapper.py
+python scrapper.py --both
+python analytics.py
 ```
-
-View CSVs by opening `method2/view.html` in a browser and dragging the file in.
 
 ## Acknowledgments
 
