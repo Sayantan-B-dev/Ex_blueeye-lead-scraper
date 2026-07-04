@@ -37,17 +37,6 @@ LOG_DIR = BASE_DIR / "logs"
 semaphore: asyncio.Semaphore = None
 
 
-def get_logger(log_path):
-    logger = logging.getLogger(str(log_path))
-    logger.setLevel(logging.DEBUG)
-    if not logger.handlers:
-        fh = logging.FileHandler(log_path, mode="a", encoding="utf-8")
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(logging.Formatter("%(asctime)s  %(message)s", datefmt="%H:%M:%S"))
-        logger.addHandler(fh)
-    return logger
-
-
 def decode_cfemail(hex_str):
     try:
         key = int(hex_str[:2], 16)
@@ -191,27 +180,12 @@ async def fetch_shallow(session, website):
     return [], "ok_no_email"
 
 
-def load_attempted(log_path):
-    if not log_path.exists():
-        return set()
-    attempted = set()
-    with open(log_path, "r", encoding="utf-8") as f:
-        for line in f:
-            parts = line.strip().split()
-            if len(parts) >= 3:
-                site = parts[2].rstrip("/").split("/")[0]
-                if site and "." in site:
-                    attempted.add(site)
-    return attempted
-
-
 async def process_country(csv_path, is_shallow):
     country = csv_path.stem
     out_path = OUTPUT_DIR / csv_path.name
     log_path = LOG_DIR / f"{country}.log"
 
-    log = get_logger(log_path)
-    attempted = load_attempted(log_path) if log_path.exists() else set()
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
 
     with open(csv_path, "r", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
@@ -224,33 +198,52 @@ async def process_country(csv_path, is_shallow):
     if "emails" not in fieldnames:
         fieldnames.append("emails")
 
+    # Load previous output if exists — use for resume
+    prev_rows = {}
+    if out_path.exists():
+        with open(out_path, "r", encoding="utf-8-sig") as f:
+            rdr = csv.DictReader(f)
+            for r in rdr:
+                w = r.get("website", "").strip()
+                if w:
+                    prev_rows[w] = r
+
     to_scrape = []
-    skipped_log = 0
-    skipped_email = 0
+    skipped = 0
     for i, row in enumerate(rows):
         w = row.get("website", "").strip()
         e = row.get("emails", "").strip()
         s = row.get("website_status", "").strip()
         row.setdefault("website_status", "")
         row.setdefault("emails", "")
+
         if not w:
             continue
+
+        # Carry over from previous output if already done
+        if w in prev_rows:
+            pr = prev_rows[w]
+            pe = pr.get("emails", "").strip()
+            ps = pr.get("website_status", "").strip()
+            if pe or ps:
+                row["emails"] = pe
+                row["website_status"] = ps
+                skipped += 1
+                continue
+
         if e:
-            skipped_email += 1
+            skipped += 1
             continue
-        domain = w.rstrip("/").split("//")[-1].split("/")[0]
-        if domain in attempted:
-            skipped_log += 1
-            row["website_status"] = "resumed"
-            continue
+
+        # For shallow pass, only process rows that were ok_no_email in fast pass
         if is_shallow and s != "ok_no_email":
-            skipped_log += 1
+            skipped += 1
             continue
+
         to_scrape.append(i)
 
     if not to_scrape:
-        print(f"{country:25s} nothing to scrape (email={skipped_email}, log_skip={skipped_log})")
-        # still write partial progress if output doesn't exist
+        print(f"{country:25s} nothing to scrape  (resume_skip={skipped})")
         if not out_path.exists():
             tmp = out_path.with_suffix(".tmp")
             with open(tmp, "w", encoding="utf-8", newline="") as f:
@@ -260,8 +253,7 @@ async def process_country(csv_path, is_shallow):
             tmp.replace(out_path)
         return
 
-    print(f"{country:25s} {len(to_scrape):>6} to scan  (email_skip={skipped_email}, log_skip={skipped_log})")
-    log.info("Starting — %s URLs, shallow=%s", len(to_scrape), is_shallow)
+    print(f"{country:25s} {len(to_scrape):>6} to scan  (resume_skip={skipped})")
 
     connector = aiohttp.TCPConnector(limit=CONCURRENCY, limit_per_host=5, force_close=True)
     timeout = ClientTimeout(total=TIMEOUT + 3)
@@ -278,7 +270,6 @@ async def process_country(csv_path, is_shallow):
         async def worker(idx):
             nonlocal found, no_email, errors, done, next_save
             website = rows[idx].get("website", "").strip()
-            domain = website.rstrip("/").split("//")[-1].split("/")[0]
             try:
                 if is_shallow:
                     emails, status = await fetch_shallow(session, website)
@@ -298,11 +289,6 @@ async def process_country(csv_path, is_shallow):
             else:
                 errors += 1
             done += 1
-
-            line = f"{status:15s} {domain}"
-            if emails:
-                line += f"  {'; '.join(emails)}"
-            log.info(line)
 
             if done >= next_save or done >= total:
                 async with save_lock:
@@ -334,30 +320,27 @@ async def process_country(csv_path, is_shallow):
     print(f"\r  Done {done}/{total}  "
           f"found={found}  no_email={no_email}  errors={errors}  "
           f"in {elapsed:.0f}s  ")
-    log.info("Done — %s/%s  found=%s  no_email=%s  errors=%s  elapsed=%ss",
-             done, total, found, no_email, errors, int(elapsed))
 
 
 async def main():
     is_shallow = "--shallow" in sys.argv
-    is_fast = "--fast" in sys.argv
-    if is_fast:
+    if "--fast" in sys.argv:
         is_shallow = False
 
     global semaphore
     semaphore = asyncio.Semaphore(CONCURRENCY)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-    csv_files = sorted(INPUT_DIR.glob("*.csv"))
+    source_dir = OUTPUT_DIR if is_shallow else INPUT_DIR
+    csv_files = sorted(source_dir.glob("*.csv"))
     if not csv_files:
-        print(f"No CSVs found in {INPUT_DIR}")
+        print(f"No CSVs found in {source_dir}")
         sys.exit(1)
 
     print(f"Mode: {'shallow' if is_shallow else 'fast (homepage only)'}")
+    print(f"Input:  {source_dir}")
     print(f"Output: {OUTPUT_DIR}")
-    print(f"Logs:   {LOG_DIR}")
     print()
 
     for csv_path in csv_files:
@@ -366,5 +349,6 @@ async def main():
 
 if __name__ == "__main__":
     import logging
-    logging.getLogger("asyncio").setLevel(logging.WARNING)
+    logging.getLogger("asyncio").setLevel(logging.CRITICAL)
+    # Suppress noisy asyncio connection-reset warnings on Windows
     asyncio.run(main())
