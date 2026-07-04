@@ -27,7 +27,9 @@ method2/*_final*.csv
 /batches/
 /output/
 /logs/
-
+/missing_emails/
+/cleaned_missing_emails/
+/no_missing_emails/
 
 # CSV output files
 taskFetchEmail/final/
@@ -42,6 +44,14 @@ Global_scrape_map/global_scraper/output/
 Global_scrape_map/global_scraper/logs/
 Global_scrape_map/global_scraper/backup/
 Global_scrape_map/global_scraper/report.csv
+Global_scrape_map/email_scraper/missing_emails/
+Global_scrape_map/email_scraper/cleaned_missing_emails/
+Global_scrape_map/email_scraper/no_missing_emails/
+Global_scrape_map/email_scraper/logs/
+Global_scrape_map/email_scraper/report.csv
+
+# Misc data archives
+data.zip
 
 # All log files (runtime artifacts)
 *.log

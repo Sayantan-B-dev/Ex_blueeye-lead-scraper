@@ -8,7 +8,7 @@ Scrapes Google Maps for event/wedding/venue businesses across **59 countries** u
 - 13 search tags per state: Event Management Company, Event Planner, Wedding Planner, Corporate Event Planner, Event Venue, Wedding Venue, Banquet Hall, Night Club, Hotel, Resort, Convention Center, Talent Agency, Entertainment Agency
 - Query format: `"{tag} in {state}, {country}"`
 
-## Run
+## Scraper
 
 ```bash
 cd Global_scrape_map\global_scraper
@@ -23,44 +23,87 @@ python run.py
 ..\run.bat
 ```
 
-## Output
+### Output
 
 | Path | Contents |
 |------|----------|
-| `global_scraper/output/{Country}.csv` | One CSV per country (e.g. `United States.csv`) |
-| `global_scraper/logs/{Country}.log` | One log per country (e.g. `United_States.log`) |
+| `global_scraper/output/{Country}.csv` | One CSV per country |
+| `global_scraper/logs/{Country}.log` | One log per country |
 | `global_scraper/output/{batch}.done` | Resume marker per batch |
 
 Every CSV row includes `country` and `state` columns.
 
-## Resume
+### Resume
 
 Re-run `python run.py` — already-completed batches are skipped via `.done` markers.
+
+## Clean
+
+Removes rows with missing phone AND website from scraped CSVs.
+
+```bash
+python email_scraper/clean.py
+```
+
+Reads from `global_scraper/output/`, writes to `email_scraper/cleaned_missing_emails/`.
+
+## Email Extraction
+
+Async email scraper (aiohttp, 50 concurrent) — reads from `cleaned_missing_emails/`, writes to `no_missing_emails/`.
+
+```bash
+cd Global_scrape_map\email_scraper
+
+# First pass: homepage only (fast)
+python scrapper.py --fast
+
+# Second pass: shallow crawl on rows with ok_no_email
+python scrapper.py
+```
+
+Auto-resume via logs — crash-safe, no `--resume` flag needed.
+
+### Analytics
+
+```bash
+python email_scraper/analytics.py
+```
+
+Scans `missing_emails/` and generates `report.csv` with total leads, missing phone/website counts.
 
 ## Directory Structure
 
 ```
 Global_scrape_map/
 ├── README.md
-├── run.bat / run.ps1          # Convenience launchers
-├── country.txt                # 59 target countries
-├── data_tags.txt / .json      # 13 search tags
-├── states.json                # Country → state subdivisions
-├── queries.json               # All 26,143 queries nested by country
-├── expand_country.py          # Generate states.json from pycountry
-├── generate_queries.py        # Generate queries.json from states + tags
-└── global_scraper/
-    ├── __init__.py
-    ├── queries.json            # Copy of all queries
-    ├── split_queries.py        # Generate batch files per country-state
-    ├── run.py                  # Main scraper (4 Docker containers)
-    ├── batches/                # (gitignored) 2,011 batch txt files
-    ├── output/                 # (gitignored) Per-country CSVs + .done markers
-    └── logs/                   # (gitignored) Per-country logs
+├── run.bat / run.ps1              # Convenience launchers
+├── country.txt                    # 59 target countries
+├── data_tags.txt / .json          # 13 search tags
+├── states.json                    # Country -> state subdivisions
+├── queries.json                   # All 26,143 queries nested by country
+├── expand_country.py              # Generate states.json from pycountry
+├── generate_queries.py            # Generate queries.json from states + tags
+├── global_scraper/
+│   ├── queries.json               # Copy of all queries
+│   ├── split_queries.py           # Generate batch files per country-state
+│   ├── run.py                     # Main scraper (4 Docker containers)
+│   ├── analytics.py               # Lead quality report
+│   ├── geo_data.py                # 59 country coordinates for fast mode
+│   ├── batches/                   # (gitignored) 2,011 batch txt files
+│   ├── output/                    # (gitignored) Per-country CSVs + .done markers
+│   └── logs/                      # (gitignored) Per-country logs
+└── email_scraper/
+    ├── scrapper.py                # Async email extractor (aiohttp)
+    ├── clean.py                   # Remove rows with no phone/website
+    ├── analytics.py               # Email-less analytics
+    ├── missing_emails/             # (gitignored) Email-enriched CSVs
+    ├── cleaned_missing_emails/     # (gitignored) Cleaned CSVs (phone+website present)
+    ├── no_missing_emails/          # (gitignored) Email scrape output
+    └── logs/                      # (gitignored) Email scrape logs
 ```
 
 ## Dependencies
 
 - **Docker Desktop** — must be running
 - **gosom/google-maps-scraper:latest** — auto-pulled if missing
-- **Python 3.10+** — pandas, pycountry (for expansion only)
+- **Python 3.10+** — pandas, pycountry, aiohttp
