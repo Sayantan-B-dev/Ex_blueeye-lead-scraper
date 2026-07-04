@@ -331,37 +331,42 @@ async def process_country(csv_path, is_shallow, is_deep=False):
           f"in {elapsed:.0f}s  ")
 
 
-async def main():
-    is_deep = "--deep" in sys.argv
-    is_shallow = "--shallow" in sys.argv
-    if "--fast" in sys.argv:
-        is_shallow = False
-        is_deep = False
-
-    global semaphore
-    semaphore = asyncio.Semaphore(CONCURRENCY)
-
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-    source_dir = OUTPUT_DIR if (is_shallow or is_deep) else INPUT_DIR
-    csv_files = sorted(source_dir.glob("*.csv"))
-    if not csv_files:
+def get_csv_files(source_dir):
+    files = sorted(source_dir.glob("*.csv"))
+    if not files:
         print(f"No CSVs found in {source_dir}")
         sys.exit(1)
+    return files
 
-    mode_label = "fast (homepage only)"
-    if is_shallow:
-        mode_label = "shallow (ok_no_email only)"
-    if is_deep:
-        mode_label = "deep (shallow crawl, retry all failures)"
 
-    print(f"Mode: {mode_label}")
+async def run_mode(mode_label, source_dir, is_shallow, is_deep):
+    global semaphore
+    semaphore = asyncio.Semaphore(CONCURRENCY)
+    print(f"\nMode: {mode_label}")
     print(f"Input:  {source_dir}")
     print(f"Output: {OUTPUT_DIR}")
     print()
-
-    for csv_path in csv_files:
+    for csv_path in get_csv_files(source_dir):
         await process_country(csv_path, is_shallow=is_shallow, is_deep=is_deep)
+
+
+async def main():
+    is_both = "--both" in sys.argv
+    is_deep = "--deep" in sys.argv and not is_both
+    is_shallow = "--shallow" in sys.argv and not is_both
+    is_fast = "--fast" in sys.argv or is_both
+
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    if is_both:
+        await run_mode("fast (homepage only)", INPUT_DIR, is_shallow=False, is_deep=False)
+        await run_mode("deep (shallow crawl, retry all failures)", OUTPUT_DIR, is_shallow=False, is_deep=True)
+    elif is_deep:
+        await run_mode("deep (shallow crawl, retry all failures)", OUTPUT_DIR, is_shallow=False, is_deep=True)
+    elif is_shallow:
+        await run_mode("shallow (ok_no_email only)", OUTPUT_DIR, is_shallow=True, is_deep=False)
+    else:
+        await run_mode("fast (homepage only)", INPUT_DIR, is_shallow=False, is_deep=False)
 
 
 if __name__ == "__main__":

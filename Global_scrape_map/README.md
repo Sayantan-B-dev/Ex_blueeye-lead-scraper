@@ -37,38 +37,40 @@ Every CSV row includes `country` and `state` columns.
 
 Re-run `python run.py` — already-completed batches are skipped via `.done` markers.
 
-## Clean
-
-Removes rows with missing phone AND website from scraped CSVs.
+## Preprocessing
 
 ```bash
+# Remove rows with missing phone AND website
 python email_scraper/clean.py
 ```
-
 Reads from `global_scraper/output/`, writes to `email_scraper/cleaned_missing_emails/`.
 
 ## Email Extraction
 
-Async email scraper (aiohttp, 50 concurrent) — reads from `cleaned_missing_emails/`, writes to `no_missing_emails/`.
+Async email scraper (aiohttp, 50 concurrent). Auto-resume — no `--resume` flag needed.
 
 ```bash
 cd Global_scrape_map\email_scraper
 
-# First pass: homepage only (fast)
-python scrapper.py --fast
+# Option A: run both passes automatically (recommended)
+python scrapper.py --both
 
-# Second pass: shallow crawl on rows with ok_no_email
-python scrapper.py
+# Option B: manual two-pass
+python scrapper.py --fast    # homepage only (fastest)
+python scrapper.py --deep    # shallow crawl, retry all failures
 ```
 
-Auto-resume via logs — crash-safe, no `--resume` flag needed.
+| Mode | Input | Scrape | Target |
+|------|-------|--------|--------|
+| `--fast` | `cleaned_missing_emails/` | Homepage only | All rows without emails |
+| `--deep` | `no_missing_emails/` | Shallow (up to 5 pages) | Rows still missing emails |
+| `--both` | Both in sequence | fast → deep | Full pipeline, one command |
 
 ### Analytics
 
 ```bash
 python email_scraper/analytics.py
 ```
-
 Scans `missing_emails/` and generates `report.csv` with total leads, missing phone/website counts.
 
 ## Directory Structure
