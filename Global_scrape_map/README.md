@@ -68,10 +68,13 @@ python scrapper.py --deep    # shallow crawl, retry all failures
 
 ### Analytics
 
+Detailed Rich dashboard with coverage, website status, intersections, email performance, and per-country breakdown. Generates `report.txt` + `report.csv`.
+
 ```bash
-python email_scraper/analytics.py
+python analytics.py --source no_missing_emails          # default (email-enriched)
+python analytics.py --source missing_emails             # raw email scrape output
+python analytics.py --source cleaned_missing_emails      # cleaned: rows with phone+website
 ```
-Scans `missing_emails/` and generates `report.csv` with total leads, missing phone/website counts.
 
 ## Directory Structure
 
