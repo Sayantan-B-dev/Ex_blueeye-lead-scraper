@@ -66,14 +66,16 @@ python scrapper.py --deep    # shallow crawl, retry all failures
 | `--deep` | `no_missing_emails/` | Shallow (up to 5 pages) | Rows still missing emails |
 | `--both` | Both in sequence | fast → deep | Full pipeline, one command |
 
-### Analytics
+## Analytics
 
-Detailed Rich dashboard with coverage, website status, intersections, email performance, and per-country breakdown. Generates `report.txt` + `report.csv`.
+Comprehensive Rich dashboard for the full pipeline — supports all three data folders. Generates `report.txt` + `report.csv` with per-country breakdowns, website status, email performance, intersections, and top domains.
 
 ```bash
-python analytics.py --source no_missing_emails          # default (email-enriched)
+cd Global_scrape_map\email_scraper
+
+python analytics.py --source no_missing_emails          # post-email-enrichment (default)
 python analytics.py --source missing_emails             # raw email scrape output
-python analytics.py --source cleaned_missing_emails      # cleaned: rows with phone+website
+python analytics.py --source cleaned_missing_emails      # pre-enrichment (has phone+website)
 ```
 
 ## Directory Structure
