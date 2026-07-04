@@ -24,6 +24,11 @@ method2/batches/
 method2/backup/
 method2/*_final*.csv
 
+/batches/
+/output/
+/logs/
+
+
 # CSV output files
 taskFetchEmail/final/
 taskFetchEmail/full/
@@ -35,6 +40,8 @@ taskFetchEmail/*.log
 Global_scrape_map/global_scraper/batches/
 Global_scrape_map/global_scraper/output/
 Global_scrape_map/global_scraper/logs/
+Global_scrape_map/global_scraper/backup/
+Global_scrape_map/global_scraper/report.csv
 
 # All log files (runtime artifacts)
 *.log
