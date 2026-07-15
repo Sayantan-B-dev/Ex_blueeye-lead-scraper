@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JustDial Query Dashboard</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; color: #333; padding: 20px; max-width: 1200px; margin: 0 auto; }
+h1 { text-align: center; margin-bottom: 6px; font-size: 26px; }
+.subtitle { text-align: center; color: #888; font-size: 13px; margin-bottom: 20px; }
+
+.help { background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 8px; padding: 14px 18px; margin-bottom: 18px; font-size: 13px; line-height: 1.6; }
+.help summary { cursor: pointer; font-weight: 600; color: #2e7d32; font-size: 14px; }
+.help code { background: #c8e6c9; padding: 1px 5px; border-radius: 3px; font-size: 12px; }
+.help .bmlink { display: inline-block; background: #1a73e8; color: #fff; padding: 4px 14px; border-radius: 4px; text-decoration: none; font-size: 12px; cursor: grab; margin: 4px 0; }
+.help .bmlink:hover { background: #1557b0; }
+.help ol { margin: 6px 0 6px 18px; }
+.help li { margin: 3px 0; }
+.help hr { border: none; border-top: 1px solid #c8e6c9; margin: 10px 0; }
+
+#bar { height: 6px; background: #e0e0e0; border-radius: 3px; margin-bottom: 16px; overflow: hidden; }
+#bar-fill { height: 100%; background: #1a73e8; border-radius: 3px; transition: width .4s; width: 0%; }
+
+#search { width: 100%; padding: 10px 16px; border: 2px solid #ddd; border-radius: 24px; font-size: 14px; margin-bottom: 20px; display: block; outline: none; }
+#search:focus { border-color: #1a73e8; }
+
+.toolbar { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+.toolbar select { padding: 6px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; }
+.toolbar label { font-size: 13px; color: #555; display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.toolbar .stats { margin-left: auto; font-size: 13px; color: #888; }
+
+.city-group { background: #fff; border-radius: 10px; padding: 16px 20px; margin-bottom: 14px; box-shadow: 0 1px 6px rgba(0,0,0,.06); }
+.city-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 2px solid #e8e8e8; }
+.city-header h2 { font-size: 17px; font-weight: 600; color: #444; }
+.city-progress { font-size: 12px; color: #888; margin-left: auto; white-space: nowrap; }
+.city-bar { height: 4px; background: #e8e8e8; border-radius: 2px; flex: 1; max-width: 120px; overflow: hidden; }
+.city-bar-fill { height: 100%; background: #1a73e8; border-radius: 2px; transition: width .4s; }
+
+.query-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.query-item { display: flex; align-items: center; gap: 6px; padding: 4px 10px 4px 6px; border-radius: 20px; cursor: pointer; font-size: 13px; transition: all .15s; border: 1px solid #d0d7e0; background: #f8f9fa; user-select: none; }
+.query-item:hover { border-color: #1a73e8; background: #e8f0fe; }
+.query-item.done { opacity: .55; border-color: #b0b0b0; background: #f0f0f0; }
+.query-item .dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #bbb; flex-shrink: 0; transition: all .2s; }
+.query-item .dot.done { background: #34a853; border-color: #34a853; }
+.query-item .dot.pending { background: transparent; border-color: #bbb; }
+.query-item .label { flex: 1; }
+.query-item .label.done { text-decoration: line-through; color: #999; }
+.query-item .open-link { font-size: 11px; color: #1a73e8; text-decoration: none; padding: 1px 6px; border-radius: 8px; opacity: 0; transition: opacity .15s; }
+.query-item:hover .open-link { opacity: 1; }
+.query-item .open-link:hover { background: #1a73e8; color: #fff; }
+
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  .query-grid { gap: 4px; }
+  .query-item { font-size: 12px; padding: 3px 8px 3px 4px; }
+}
+</style>
+</head>
+<body>
+<h1>JustDial Query Dashboard</h1>
+<div class="subtitle" id="subtitle">Loading...</div>
+
+<div id="bar"><div id="bar-fill"></div></div>
+
+<details class="help">
+<summary> How to scrape JustDial — 3 methods</summary>
+<hr>
+<b>Method A: Bookmarklet</b> (zero install, manual click on JustDial page)<br>
+Drag this to your bookmarks bar → <a class="bmlink" id="bmAnchor">Scrape JD</a><br>
+Then on any JustDial results page, click that bookmark → CSV downloads.
+<hr>
+<b>Method B: Tampermonkey Script</b> (auto-injects Scrape button)<br>
+<ol>
+  <li>Install <a href="https://www.tampermonkey.net/" target="_blank">Tampermonkey</a> extension</li>
+  <li>Open <a href="justdial-scraper.user.js" target="_blank">justdial-scraper.user.js</a> → it will prompt to install</li>
+  <li>Every JustDial results page gets a floating <b>Scrape</b> button → click → CSV downloads</li>
+</ol>
+<hr>
+<b>Method C: Automatic scraper</b> (no browser, 100% automated)<br>
+<code>node scraper.js --all</code> — scrapes all 432 queries via HTTP (no browser needed).<br>
+<code>node scraper.js --serve</code> — starts dashboard server at <code>http://localhost:3456</code> with live state sync.<br>
+<code>node scraper.js --city &lt;name&gt;</code> — scrape a specific city only.<br>
+<code>node scraper.js --list-pending</code> — see what's left to scrape.
+</details>
+
+<div class="toolbar">
+  <input type="text" id="search" placeholder="Filter cities or queries…" autofocus>
+  <label><input type="checkbox" id="hideDone"> Hide done</label>
+  <label><input type="checkbox" id="onlyDone"> Only done</label>
+  <span class="stats" id="stats"></span>
+</div>
+
+<div id="container"></div>
+
+<script>
+const API = location.port ? '' : '';  // empty = same origin when served, falls back to file fetch + localStorage
+let queriesData = {};
+let stateData = { completed: {} };
+
+function stateKey(city, query) { return city + '|' + query; }
+
+async function loadState() {
+  if (location.port) {
+    try {
+      const r = await fetch('/api/state');
+      stateData = await r.json();
+      return;
+    } catch {}
+  }
+  try { stateData = JSON.parse(localStorage.getItem('jd_state')) || { completed: {} }; }
+  catch { stateData = { completed: {} }; }
+}
+
+async function toggleState(city, query) {
+  if (location.port) {
+    try {
+      const r = await fetch('/api/state', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ city, query })
+      });
+      stateData = await r.json();
+      render();
+      return;
+    } catch {}
+  }
+  const key = stateKey(city, query);
+  if (stateData.completed[key]) delete stateData.completed[key];
+  else stateData.completed[key] = true;
+  localStorage.setItem('jd_state', JSON.stringify(stateData));
+  render();
+}
+
+async function loadQueries() {
+  if (location.port) {
+    try {
+      const r = await fetch('/api/queries');
+      queriesData = await r.json();
+      return;
+    } catch {}
+  }
+  const r = await fetch('queries.json');
+  const raw = await r.json();
+  const enriched = {};
+  for (const [city, qs] of Object.entries(raw)) {
+    enriched[city] = qs.map(q => ({ query: q, done: !!stateData.completed[stateKey(city, q)] }));
+  }
+  queriesData = enriched;
+}
+
+function slugify(s) { return s.trim().replace(/\s+/g, '-'); }
+function buildUrl(city, query) { return 'https://www.justdial.com/' + encodeURIComponent(city) + '/' + slugify(query); }
+
+function computeStats() {
+  let total = 0, done = 0;
+  for (const [, items] of Object.entries(queriesData)) {
+    for (const item of items) {
+      total++;
+      if (item.done) done++;
+    }
+  }
+  return { total, done };
+}
+
+function render() {
+  const container = document.getElementById('container');
+  container.innerHTML = '';
+
+  const hideDone = document.getElementById('hideDone').checked;
+  const onlyDone = document.getElementById('onlyDone').checked;
+  const searchVal = document.getElementById('search').value.toLowerCase();
+
+  let total = 0, totalDone = 0;
+  const cities = Object.entries(queriesData).sort((a, b) => a[0].localeCompare(b[0]));
+
+  for (const [city, items] of cities) {
+    const filtered = items.filter(item => {
+      const q = item.query;
+      if (hideDone && item.done) return false;
+      if (onlyDone && !item.done) return false;
+      if (searchVal && !q.toLowerCase().includes(searchVal) && !city.toLowerCase().includes(searchVal)) return false;
+      return true;
+    });
+    if (filtered.length === 0) continue;
+
+    const cityDone = items.filter(i => i.done).length;
+    total += items.length;
+    totalDone += cityDone;
+    const pct = items.length ? Math.round(cityDone / items.length * 100) : 0;
+
+    const group = document.createElement('div');
+    group.className = 'city-group';
+
+    const header = document.createElement('div');
+    header.className = 'city-header';
+    header.innerHTML = `<h2>${city}</h2>
+      <div class="city-bar"><div class="city-bar-fill" style="width:${pct}%"></div></div>
+      <span class="city-progress">${cityDone}/${items.length}</span>`;
+    group.appendChild(header);
+
+    const grid = document.createElement('div');
+    grid.className = 'query-grid';
+
+    for (const item of filtered) {
+      const div = document.createElement('div');
+      div.className = 'query-item' + (item.done ? ' done' : '');
+      div.title = item.done ? 'Click to toggle (done → pending)' : 'Click to toggle (pending → done)';
+
+      const dot = document.createElement('span');
+      dot.className = 'dot ' + (item.done ? 'done' : 'pending');
+      div.appendChild(dot);
+
+      const label = document.createElement('span');
+      label.className = 'label' + (item.done ? ' done' : '');
+      label.textContent = item.query;
+      div.appendChild(label);
+
+      const link = document.createElement('a');
+      link.className = 'open-link';
+      link.textContent = '↗';
+      link.href = buildUrl(city, item.query);
+      link.target = '_blank';
+      link.title = 'Open JustDial search';
+      link.addEventListener('click', e => e.stopPropagation());
+      div.appendChild(link);
+
+      div.addEventListener('click', () => toggleState(city, item.query));
+      grid.appendChild(div);
+    }
+
+    group.appendChild(grid);
+    container.appendChild(group);
+  }
+
+  const pct = total ? Math.round(totalDone / total * 100) : 0;
+  document.getElementById('subtitle').textContent = `${totalDone} / ${total} done (${pct}%) across ${cities.length} cities`;
+  document.getElementById('bar-fill').style.width = pct + '%';
+
+  const pending = total - totalDone;
+  document.getElementById('stats').textContent = pending ? `${pending} pending` : 'All done 🎉';
+}
+
+async function init() {
+  await loadState();
+  await loadQueries();
+  render();
+
+  // Re-render on filter changes
+  document.getElementById('search').addEventListener('input', render);
+  document.getElementById('hideDone').addEventListener('change', render);
+  document.getElementById('onlyDone').addEventListener('change', render);
+}
+
+init().catch(err => {
+  document.getElementById('container').innerHTML = `<p style="color:red">Error: ${err.message}</p>`;
+});
+
+// Set bookmarklet href
+const bm = document.getElementById('bmAnchor');
+if (bm) {
+  fetch('bookmarklet.min.txt').then(r => r.text()).then(url => bm.href = url).catch(() => {});
+}
+</script>
+</body>
+</html>
