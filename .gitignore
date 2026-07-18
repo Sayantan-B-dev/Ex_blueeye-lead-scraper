@@ -67,3 +67,8 @@ Desktop.ini
 
 */output/csv/
 */output/raw_merged_data/
+
+# StarClinch scraper runtime dirs
+Starclinch/data/
+Starclinch/logs/
+Starclinch/tools/

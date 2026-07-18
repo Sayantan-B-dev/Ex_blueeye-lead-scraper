@@ -1,0 +1,14 @@
+https://starclinch.com/
+
+
+START
+│
+├── Visit: /
+│
+└── Extract only music-related category pages:
+    /book-singer-online
+    /book-band-online
+    /book-dj-online
+    /book-instrumentalist-online
+│
+└── Skip others
