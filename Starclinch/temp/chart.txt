@@ -1,0 +1,84 @@
+============================================================
+  VEDIC (LAHIRI SIDEREAL) BIRTH CHART
+  Sayantan Bharati | 17/07/1999 18:10 IST
+  Lat 22.94065 N, Lon 88.776727 E (near Kolkata)
+============================================================
+
+  LAHIRI AYANAMSA (1999): 336.1608° (subtracted)
+
+  PLANET      TROPICAL°   SIDEREAL°    SIGN
+  --------------------------------------------------
+  Sun          114.52°     90.68°   Cancer 0.68°
+  Moon         171.63°    147.79°   Leo 27.79°
+  Venus        152.36°    128.52°   Leo 8.52°
+  Rahu         133.94°    110.10°   Cancer 20.10°
+  Lagna        292.25°    268.41°   Sagittarius 28.41°
+
+  MOON NAKSHATRA : Uttara Phalguni (pada 1)  -> lord: Sun
+  MOON SIDEREAL  : Leo 27.79°
+
+  VIMSHOTTARI DASHA (from Moon nakshatra lord)
+  Starting lord: Sun  (full 6y, remaining at birth 5.49y)
+
+  PERIOD                 FROM         TO           YEARS
+  --------------------------------------------------
+  Sun                  1999-07    2005-01   5.49
+  Moon                 2005-01    2015-01   10
+  Mars                 2015-01    2022-01   7
+  Rahu                 2022-01    2040-01   18
+  Jupiter              2040-01    2056-01   16
+  Saturn               2056-01    2075-01   19
+  Mercury              2075-01    2092-01   17
+  Ketu                 2092-01    2099-01   7
+  Venus                2099-01    2119-01   20
+
+  ANTARDASHA (sub-periods) WITHIN RAHU MAHADASHA
+  (Rahu MD is your CURRENT period; shows relationship-timing windows)
+
+  RAHU MAHADASHA: 2022-01 -> 2040-01
+  ANTAR        FROM       TO         MO
+  ----------------------------------------
+  Ketu         2022-01  2023-02  1.0
+  Venus        2023-02  2025-11  2.8
+  Sun          2025-11  2026-08  0.7
+  Moon         2026-08  2027-09  1.1
+  Mars         2027-09  2028-06  0.7
+  Rahu         2028-06  2030-03  1.7
+  Jupiter      2030-03  2031-07  1.3
+  Saturn       2031-07  2032-11  1.4
+  Mercury      2032-11  2033-11  1.0
+
+  PLANET HOUSE PLACEMENTS (from Lagna = Sagittarius)
+  ----------------------------------------
+  Lagna      House 1  (Sagittarius 28.4°)
+  Sun        House 7  (Cancer 0.7°)
+  Moon       House 8  (Leo 27.8°)
+  Mars       House 10  (Libra 10.8°)
+  Mercury    House 7  (Cancer 14.8°)
+  Jupiter    House 4  (Aries 8.8°)
+  Venus      House 8  (Leo 8.5°)
+  Saturn     House 4  (Aries 21.7°)
+  Rahu       House 7  (Cancer 20.1°)
+  Ketu       House 1  (Capricorn 20.1°)
+
+  FINANCIAL HOUSES (2nd wealth / 11th gains / 10th career / 9th fortune)
+  ------------------------------------------------------------
+  2nd (wealth)      : sign Capricorn   lord Saturn   in House 4 (Aries)
+  11th (gains)      : sign Libra       lord Venus    in House 8 (Leo)
+  10th (career)     : sign Virgo       lord Mercury  in House 7 (Cancer)
+  9th (fortune)     : sign Leo         lord Sun      in House 7 (Cancer)
+  6th (effort)      : sign Taurus      lord Venus    in House 8 (Leo)
+  1st (self)        : sign Sagittarius lord Jupiter  in House 4 (Aries)
+
+  WEALTH-TIMING (Mahadasha periods of 2nd & 11th lords)
+  2nd lord = Saturn | 11th lord = Venus | 10th lord = Mercury
+
+  DASHA LORD     PERIOD                       NOTE
+  ------------------------------------------------------------
+  Rahu           2022-01 -> 2040-01           via unconventional/online
+  Jupiter        2040-01 -> 2056-01           expansion (also 9th/12th lord)
+  Saturn         2056-01 -> 2075-01           slow but lasting
+  Mercury        2075-01 -> 2092-01           via trade/skill
+  Venus          2099-01 -> 2119-01           via arts/partnership
+
+============================================================

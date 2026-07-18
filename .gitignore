@@ -69,7 +69,8 @@ Desktop.ini
 */output/raw_merged_data/
 
 # StarClinch scraper runtime dirs
-Starclinch/link_scrapper/data/
+Starclinch/link_scrapper/data/artists.json
+Starclinch/link_scrapper/data/state.json
 Starclinch/link_scrapper/logs/
 Starclinch/link_scrapper/tools/
 

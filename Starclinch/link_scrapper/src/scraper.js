@@ -104,6 +104,13 @@ function markLinkSeen(state, slug) { state.links_seen[slug] = true; saveState(st
 function loadArtists() { return loadJSON(ARTISTS_FILE, []); }
 
 // ============ LOGGING ============
+// Use LOCAL time (not UTC) so the log matches the user's wall clock.
+function localTS() {
+  const d = new Date();
+  const p = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ` +
+         `${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`;
+}
 // live progress state (rendered as a status banner on every event)
 const PROG = {
   cat: '—', page: 0, totalPages: '?', category: 0, categoryTotal: 4,
@@ -123,8 +130,8 @@ function statusBanner() {
     `  ${PROG.phase}`,
   ].join('\n');
 }
-function logLine(msg, opts = {}) {
-  const ts = new Date().toISOString().replace('T', ' ').slice(0, 19);
+function logLine(msg) {
+  const ts = localTS();
   const line = `[${ts}] ${msg}`;
   // redraw live banner above the scrolling log
   if (process.stdout.isTTY) {
@@ -135,7 +142,7 @@ function logLine(msg, opts = {}) {
   try { appendFileSync(LOG_FILE, line + '\n'); } catch {}
 }
 function logEvent(msg) { // event without full banner redraw (keeps log readable in file)
-  const ts = new Date().toISOString().replace('T', ' ').slice(0, 19);
+  const ts = localTS();
   const line = `[${ts}] ${msg}`;
   console.log(line);
   try { appendFileSync(LOG_FILE, line + '\n'); } catch {}
