@@ -28668,5 +28668,5475 @@
         "https://cdn.starclinch.in/artist/litoka-kinimi/profile_pic.webp"
       ]
     }
+  },
+  {
+    "id": 274204,
+    "slug": "hriday",
+    "name": "Hriday",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/hriday",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Dwarka",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 30,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/hriday"
+    },
+    "about": "My USP is that unlike most performing singers I am trained in Indian classical which opens a wide varity/range of songs that I justify and would ad versitality",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/hriday/profile_pic.webp"
+      ]
+    }
+  },
+  {
+    "id": 274748,
+    "slug": "harshal-2",
+    "name": "Harshal",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/harshal-2",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "South West Delhi",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/harshal-2"
+    },
+    "about": "A versatile singer with emotive vocals and a dynamic stage presence, delivering engaging performances that connect deeply with audiences.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/harshal-2/profile_pic.webp"
+      ]
+    }
+  },
+  {
+    "id": 275118,
+    "slug": "mannie",
+    "name": "Mannie",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/mannie",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Bangalore",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/mannie"
+    },
+    "about": "Delivers powerful and expressive vocals across a variety of genres, from soulful ballads to contemporary hits.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/y1EGNyXiMY8"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/mannie/mannie.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275330,
+    "slug": "mryn",
+    "name": "MRYN",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/mryn",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Kamrup",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Assamese",
+        "English",
+        "Hindi",
+        "Nepali"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/mryn"
+    },
+    "about": "Self-taught singer and true Zubeen paglu delivering soulful Assamese, Bollywood and Nepali songs with raw emotion that connects instantly with the audience.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/JWrmI4NXqrY"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/mryn/profile_pic.webp"
+      ]
+    }
+  },
+  {
+    "id": 275334,
+    "slug": "natasha-cleophas",
+    "name": "Natasha Cleophas",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/natasha-cleophas",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Gautam Buddha Nagar",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 45,
+        "max": 180
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/natasha-cleophas"
+    },
+    "about": "I sing English retro classics, modern English hits, and today’s Bollywood songs, blending all three into a smooth, fresh, and versatile live experience.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/QrGTnjTw5O4"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/natasha-cleophas/profile_pic.webp"
+      ]
+    }
+  },
+  {
+    "id": 275404,
+    "slug": "debasish-roy",
+    "name": "Debasish Roy",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/debasish-roy",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Calcutta",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/debasish-roy"
+    },
+    "about": "A versatile Bollywood singer who combines soulful vocals with interactive live performances, ideal for intimate and high-energy celebrations.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/debasish-roy/debasish-roy.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275408,
+    "slug": "shiv-live",
+    "name": "Shiv Live",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/shiv-live",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Hyderabad",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/shiv-live"
+    },
+    "about": "A versatile live singer who blends soulful vocals with interactive performance energy, creating a personalized and engaging musical experience for every audience.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/shiv-live/shiv-live.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275424,
+    "slug": "aaryan-2",
+    "name": "Aaryan",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/aaryan-2",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Central Delhi",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/aaryan-2"
+    },
+    "about": "A multi-genre acoustic performer who blends Bollywood, English, Retro & Ghazal music into engaging, interactive karaoke-style live sets creating a perfect mix of nostalgia, energy, and audience connection.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/aaryan-2/aaryan-2_zIArh30.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275455,
+    "slug": "mihir-dangle",
+    "name": "Mihir Dangle",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/mihir-dangle",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/mihir-dangle"
+    },
+    "about": "Mihir Known for blending pop, indie, and modern influences, Mihir delivers a versatile sound that appeals to a wide range of listeners.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/qKwp6hyLI1w"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/mihir-dangle/mihir-dangle_sxiSTVM.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275459,
+    "slug": "anushil-rajput",
+    "name": "Anushil Rajput",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/anushil-rajput",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/anushil-rajput"
+    },
+    "about": "Represents a self-made artist journey without heavy industry backing, which appeals to young audiences.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/1_yrcmuSKyQ"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/anushil-rajput/anushil-rajput.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275474,
+    "slug": "zubairlive",
+    "name": "Zubair.Live",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/zubairlive",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Hyderabad",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/zubairlive"
+    },
+    "about": "Zubair Focused on originality and meaningful musical expression rather than following trends.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/6Ep2QPjFgQA"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/zubairlive/zubairlive.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275480,
+    "slug": "captain-maharishi",
+    "name": "Captain Maharishi",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/captain-maharishi",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/captain-maharishi"
+    },
+    "about": "Relatable & Engaging Content – Connects well with youth through everyday humor and real-life observations",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/HoOfONSW-Z4"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/captain-maharishi/captain-maharishi.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275612,
+    "slug": "subz",
+    "name": "Subz",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/subz",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Matigara block",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 30,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Bengali",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/subz"
+    },
+    "about": "Professional singer specializing in Bollywood, Bengali and acoustic live performances with a focus on quality, versatility and audience satisfaction.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/-VxnxJnw-aU"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/subz/profile.jpg"
+      ]
+    }
+  },
+  {
+    "id": 277377,
+    "slug": "k-one",
+    "name": "K-one",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/k-one",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Panvel",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 30,
+        "max": 180
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/k-one"
+    },
+    "about": "Can sing as well as rap and also i do make my originals so i can perform that too and can make audience engage with me",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/k-one/profile.jpg"
+      ]
+    }
+  },
+  {
+    "id": 277566,
+    "slug": "vipin-dedha",
+    "name": "Vipin Dedha",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 43,
+    "source": {
+      "url": "https://starclinch.com/vipin-dedha",
+      "input_category": "book-singer-online",
+      "input_page": 43
+    },
+    "location": {
+      "city": "Delhi",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/vipin-dedha"
+    },
+    "about": "Energetic live performer with strong crowd engagement and stage presence.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/vipin-dedha/vipin-dedha.jpg"
+      ]
+    }
+  },
+  {
+    "id": 276753,
+    "slug": "abhi-music",
+    "name": "Abhi Music",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/abhi-music",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "Dehradun",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/abhi-music"
+    },
+    "about": "High-energy Bollywood live act delivering interactive performances with strong crowd engagement and versatile event-friendly entertainment.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/abhi-music/abhi-music.jpg"
+      ]
+    }
+  },
+  {
+    "id": 277071,
+    "slug": "rohan-5",
+    "name": "Rohan",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/rohan-5",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": null,
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/rohan-5"
+    },
+    "about": "Versatile Music Style – Covers Bollywood, indie, and commercial tracks, suitable for mixed audience groups",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/rohan-5/rohan-5.jpg"
+      ]
+    }
+  },
+  {
+    "id": 273557,
+    "slug": "ashwani-kaul",
+    "name": "Ashwani kaul",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/ashwani-kaul",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "South West Delhi",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 30,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/ashwani-kaul"
+    },
+    "about": "I am a passionate singer voice of healing, blending classic Bollywood covers with deep emotion and grace for my audiences online n offline.I can prove it.Any time.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/N3XciLNcyak"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/ashwani-kaul/profile_pic.webp"
+      ]
+    }
+  },
+  {
+    "id": 275434,
+    "slug": "saurav-live",
+    "name": "Saurav live",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/saurav-live",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "Hyderabad",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/saurav-live"
+    },
+    "about": "Saurav Live suggests authenticity and real-time performance energy.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/Wku8RVZ4NoE"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/saurav-live/saurav-live.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275435,
+    "slug": "sammie",
+    "name": "Sammie",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/sammie",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "Chennai Region",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Telugu"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/sammie"
+    },
+    "about": "Specializes in English retro, pop, and acoustic covers with a smooth, engaging vocal style.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/sammie/sammie_75QoHvq.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275466,
+    "slug": "rangrez-band-goa",
+    "name": "Rangrez Band Goa",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/rangrez-band-goa",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "South Goa",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 150
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi",
+        "Punjabi",
+        "Konkani"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/rangrez-band-goa"
+    },
+    "about": "Rohit creates soulful and high-energy live performances that blend Bollywood melodies, acoustic vibes, and crowd interaction, making every audience feel connected, entertained, and emotionally engaged.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/orjRwBYnazg"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/rangrez-band-goa/profile_WAyVvqo.jpg"
+      ]
+    }
+  },
+  {
+    "id": 274234,
+    "slug": "kartik-2",
+    "name": "Kartik",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/kartik-2",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "Pune",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 180
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/kartik-2"
+    },
+    "about": "Independent solo artist,along with the guitar to get your parties and events to next level and make people groove along with the melody of live acoustic music",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/kartik-2/profile_pic.webp"
+      ]
+    }
+  },
+  {
+    "id": 275379,
+    "slug": "arjan",
+    "name": "Arjan",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/arjan",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/arjan"
+    },
+    "about": "A rising singer who blends modern Bollywood vibes with engaging, audience-friendly performances.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/MKSzXBVSwnQ"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/arjan/arjan_DPVLjQY.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275433,
+    "slug": "satyam-2",
+    "name": "Satyam",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/satyam-2",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "Goa-Panaji",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi",
+        "Konkani"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/satyam-2"
+    },
+    "about": "Soulful acoustic singer-guitarist delivering versatile Bollywood, Indie & English live performances with engaging audience interaction for memorable events.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/lyEBiMxocIU"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/satyam-2/satyam-2.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275436,
+    "slug": "aadinath-dhumale",
+    "name": "Aadinath Dhumale",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/aadinath-dhumale",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "Pune",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi",
+        "Marathi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/aadinath-dhumale"
+    },
+    "about": "Aadinath isn’t just singing songs—he delivers emotions people feel instantly.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/aadinath-dhumale/aadinath-dhumale.jpg"
+      ]
+    }
+  },
+  {
+    "id": 150532,
+    "slug": "akash-2",
+    "name": "Akash",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/akash-2",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 120,
+        "max": 180
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/akash-2"
+    },
+    "about": "From romantic melodies to high-energy hits, I create live music experiences that keep audiences hooked & happy.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/haCF7vyvW58"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/akash-2/profile_pic.webp"
+      ]
+    }
+  },
+  {
+    "id": 275102,
+    "slug": "akxheart",
+    "name": "Akxheart",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/akxheart",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "Pune",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/akxheart"
+    },
+    "about": "Engaging performances that leave lasting impressions",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/OnJgdDLamdI"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/akxheart/akxheart.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275428,
+    "slug": "zahir-hussain",
+    "name": "Zahir Hussain",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/zahir-hussain",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "Guwahati HQ",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Assamese",
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/zahir-hussain"
+    },
+    "about": "A soulful Hindi acoustic singer known for romantic Bollywood renditions with guitar, creating a warm, intimate vibe and strong audience connection—perfect for private parties and small gatherings.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/LroKcFRf5Ng"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/zahir-hussain/zahir-hussain.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275468,
+    "slug": "sandmanleo",
+    "name": "Sandmanleo",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/sandmanleo",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "Tiruvallur",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Tamil"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/sandmanleo"
+    },
+    "about": "Sandmanleo is known for his emotionally driven singing style that creates a deep connection with listeners, especially in romantic and acoustic performances.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/sandmanleo/profile.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275499,
+    "slug": "adarsh-revankar",
+    "name": "Adarsh Revankar",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 44,
+    "source": {
+      "url": "https://starclinch.com/adarsh-revankar",
+      "input_category": "book-singer-online",
+      "input_page": 44
+    },
+    "location": {
+      "city": "Bangalore",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi",
+        "Kannada",
+        "Telugu"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/adarsh-revankar"
+    },
+    "about": "Ideal for cafés, corporate gigs, private events & college shows",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/CoNgA2TRY3E"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/adarsh-revankar/adarsh-revankar.jpg"
+      ]
+    }
+  },
+  {
+    "id": 273138,
+    "slug": "monisha-caroline",
+    "name": "Monisha Caroline",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/monisha-caroline",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": "Kanchipuram",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 30,
+        "max": 180
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Malayalam",
+        "Tamil"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/monisha-caroline"
+    },
+    "about": "With over 2000+ stage programs, concerts, and recordings, I’ve mastered the art of connecting with audiences through both Tamil and English gospeland a musician too.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/DZuI6uOQPVI"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/monisha-caroline/profile_pic.webp"
+      ]
+    }
+  },
+  {
+    "id": 272620,
+    "slug": "yash-durge",
+    "name": "Yash Durge",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/yash-durge",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": "Nagpur",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 300
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi",
+        "Marathi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/yash-durge"
+    },
+    "about": "I perform Bollywood hits (old to new) and Marathi songs with passion and versatility to create unforgettable musical moments at every event.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/rP4s63ozCSE"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/yash-durge/profile_pic.png"
+      ]
+    }
+  },
+  {
+    "id": 263426,
+    "slug": "saurav-kishan-chhota-rafi",
+    "name": "Saurav Kishan Chhota Rafi",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/saurav-kishan-chhota-rafi",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": null,
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/saurav-kishan-chhota-rafi"
+    },
+    "about": "Saurav Kishan is an Indian singer, and he is popularly known as Chhota Rafi..His grandfather was a homoeopathy doctor and was very fond of music. It was Sauravs grandfather who inspired him to start learning music. Saurav Kishans Childhood Picture Saurav Kishan With His Grandfather.At the age of 3, he started learning music, and when he was a three-and-a-half-year-old, he performed for the first time at a concert on Doordarshan.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/saurav-kishan-chhota-rafi/saurav-kishan-chhota-rafi-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 273388,
+    "slug": "naman-jangra",
+    "name": "Naman jangra",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/naman-jangra",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": "Faridabad",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 30,
+        "max": 300
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/naman-jangra"
+    },
+    "about": "Naman: The Versatile Vibe Curator. Expert in Hindi, Punjabi, Sufi, & Bollywood. My daily performance experience ensures a high-energy show with audiance intersection",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/VRbvsZjrfqs"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/naman-jangra/profile_pic.webp"
+      ]
+    }
+  },
+  {
+    "id": 274290,
+    "slug": "arpit-assem-collective",
+    "name": "Arpit Assem Collective",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/arpit-assem-collective",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": "Bangalore HQ",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/arpit-assem-collective"
+    },
+    "about": "Smooth, emotive vocals with a strong ability to connect to listeners — perfect for intimate acoustic nights, live concerts, or studio recordings.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/arpit-assem-collective/arpit-assem-collective.png"
+      ]
+    }
+  },
+  {
+    "id": 275100,
+    "slug": "paarthho",
+    "name": "paarthho",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/paarthho",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": "Pune",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/paarthho"
+    },
+    "about": "Soulful & Expressive Vocals that create a strong emotional connect",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/e3Jl7wvT7BM"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/paarthho/paarthho.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275106,
+    "slug": "vandana-pal",
+    "name": "Vandana Pal",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/vandana-pal",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": "Central Delhi",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/vandana-pal"
+    },
+    "about": "A voice that communicates depth and feeling.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/zVOdNPwkCz0"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/vandana-pal/vandana-pal.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275137,
+    "slug": "aankit-kholia",
+    "name": "Aankit Kholia",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/aankit-kholia",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": "Central Delhi",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/aankit-kholia"
+    },
+    "about": "Ability to shift from soft melodies to high-energy performances",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/1iGh4gXYVRQ"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/aankit-kholia/aankit-kholia.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275153,
+    "slug": "hanuman-kind",
+    "name": "Hanuman Kind",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/hanuman-kind",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": "Hyderabad",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/hanuman-kind"
+    },
+    "about": "Globally recognized Indian rapper with strong cross-cultural appeal",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/qQrlVJVcaPs"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/hanuman-kind/hanuman-kind.jpg"
+      ]
+    }
+  },
+  {
+    "id": 275250,
+    "slug": "yashashree-bhave",
+    "name": "Yashashree Bhave",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/yashashree-bhave",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": "Nagpur",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Bengali",
+        "Hindi",
+        "Marathi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/yashashree-bhave"
+    },
+    "about": "Finalist on one of India’s most popular singing platforms (Indian Idol 2) and runner-up on Sa Re Ga Ma Pa, earning widespread recognition early in her career.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/bmVsDYlu6Qg"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/yashashree-bhave/profile_pic.webp"
+      ]
+    }
+  },
+  {
+    "id": 275425,
+    "slug": "meera-chandra",
+    "name": "Meera Chandra",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/meera-chandra",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": "Bangalore",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/meera-chandra"
+    },
+    "about": "A soulful acoustic singer specializing in Bollywood, retro, and unplugged music, known for creating a warm, romantic, and intimate live experience with strong audience connection.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/ah4Upbrh_QI"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/meera-chandra/meera-chandra.jpg"
+      ]
+    }
+  },
+  {
+    "id": 7394,
+    "slug": "akoustic-soul",
+    "name": "AKoustic Soul",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/akoustic-soul",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": "Pune",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/akoustic-soul"
+    },
+    "about": "AKoustic Soul stands for a musical expression that comes directly from Amit's heart into your ears",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/_SYOGQ5DuJ0"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/akoustic-soul/akoustic-soul-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 13099,
+    "slug": "aneesh-pillai",
+    "name": "Aneesh Pillai",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/aneesh-pillai",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": null,
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/aneesh-pillai"
+    },
+    "about": "Aneesh is an aspiring musician from Pune who sings as well as plays a variety of instruments through which he showcases his brilliant talent!",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/aneesh-pillai/aneesh-pillai-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 14411,
+    "slug": "ankit-upadhyay",
+    "name": "Ankit Upadhyay",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/ankit-upadhyay",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": "Delhi",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/ankit-upadhyay"
+    },
+    "about": "Ankit is a Delhi-based guitarist/vocalist who has the ability to make the audiences go wild with his performance!",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/ankit-upadhyay/profile.jpg"
+      ]
+    }
+  },
+  {
+    "id": 15109,
+    "slug": "anoop-talwar",
+    "name": "Anoop Talwar",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 45,
+    "source": {
+      "url": "https://starclinch.com/anoop-talwar",
+      "input_category": "book-singer-online",
+      "input_page": 45
+    },
+    "location": {
+      "city": null,
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/anoop-talwar"
+    },
+    "about": "Anoop Talwar is an aspiring acoustic singer based in New Delhi who has covered several various hits till date!",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/anoop-talwar/anoop-talwar-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 17374,
+    "slug": "arjun-kanungo",
+    "name": "Arjun Kanungo",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/arjun-kanungo",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/arjun-kanungo"
+    },
+    "about": "Arjun Kanungo blends soulful vocals with modern beats, making waves in indie pop and Bollywood music with hits like “Baaki Baatein Peene Baad.”",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/NyBUaC4uZsg"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/arjun-kanungo/arjun-kanungo.jpg"
+      ]
+    }
+  },
+  {
+    "id": 17705,
+    "slug": "arn",
+    "name": "ARN",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/arn",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": null,
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/arn"
+    },
+    "about": "With its own distinctive voice and tunes, the band has come a long way, composing songs that are fresh and absolutely addictive!",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/arn/arn-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 250478,
+    "slug": "a-s-virus",
+    "name": "A S Virus",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/a-s-virus",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": null,
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/a-s-virus"
+    },
+    "about": "",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/a-s-virus/a-s-virus-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 140569,
+    "slug": "ustad-ghulam-mustafa-khan",
+    "name": "Ustad Ghulam Mustafa Khan",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/ustad-ghulam-mustafa-khan",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": null,
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/ustad-ghulam-mustafa-khan"
+    },
+    "about": "A legendary classical singer who devoted his life to Indian classical music.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/ustad-ghulam-mustafa-khan/ustad-ghulam-mustafa-khan-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 82609,
+    "slug": "mridhula-sekhar",
+    "name": "Mridhula Sekhar",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/mridhula-sekhar",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": null,
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/mridhula-sekhar"
+    },
+    "about": "Mridula Sekhar is the youngest singer from Chennai; she is energetic, and music is her passion",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/mridhula-sekhar/mridhula-sekhar.png"
+      ]
+    }
+  },
+  {
+    "id": 160403,
+    "slug": "ankit-menon",
+    "name": "Ankit Menon",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/ankit-menon",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": "Kochi",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/ankit-menon"
+    },
+    "about": "Ankit is a Singer and music composer/ producer who has lot of experience in sound and its effects.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/ankit-menon/ankit-menon-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 163410,
+    "slug": "abhisek-jena",
+    "name": "Abhisek Jena",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/abhisek-jena",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": "Khorda",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 180
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Bengali",
+        "English",
+        "Hindi",
+        "Odia",
+        "Telugu",
+        "Oriya"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/abhisek-jena"
+    },
+    "about": "Versatile vocalist blending soulful Bollywood melodies with acoustic nostalgia to high-energy dance hits, I take the audience on an emotional, foot-tapping journey.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/abhisek-jena/profile_pic.webp"
+      ]
+    }
+  },
+  {
+    "id": 114107,
+    "slug": "satinder-sartaaj",
+    "name": "Satinder Sartaaj",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/satinder-sartaaj",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": null,
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/satinder-sartaaj"
+    },
+    "about": "As an artist, he excites, enlightens, leads and embraces his fans with insights into life's meaning and deepest feelings",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/satinder-sartaaj/satinder-sartaaj-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 119665,
+    "slug": "shyaamal-jadav",
+    "name": "Shyaamal Jadav",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/shyaamal-jadav",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": null,
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/shyaamal-jadav"
+    },
+    "about": "The professional singer creates magic on stage when he sings popular and groovy Bollywood numbers!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/7HgQGzTmKe4"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/shyaamal-jadav/shyaamal-jadav-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 123540,
+    "slug": "sourabhee-debbarma",
+    "name": "Sourabhee Debbarma",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/sourabhee-debbarma",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": null,
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/sourabhee-debbarma"
+    },
+    "about": "The first and only female Indian Idol winner; she is also a record holder in Guinness World Records for singing while suspended upside down!",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/sourabhee-debbarma/sourabhee-debbarma-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 96425,
+    "slug": "prateek-bhaduri",
+    "name": "Prateek Bhaduri",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/prateek-bhaduri",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": "Pune",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/prateek-bhaduri"
+    },
+    "about": "Prateek Bhaduri is a well-known independent singer/songwriter from Pune who has won the 'best pop artist' award in the Radio City Freedom Awards!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/69_c3ozqMqo"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/prateek-bhaduri/prateek-bhaduri.jpg"
+      ]
+    }
+  },
+  {
+    "id": 98918,
+    "slug": "puja-chatterjee",
+    "name": "Puja Chatterjee",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/puja-chatterjee",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/puja-chatterjee"
+    },
+    "about": "Puja Chatterjee is a powerhouse vocalist whose soulful depth, versatile repertoire, and commanding stage presence turn every performance into an unforgettable musical experience, making her a perfect fit for corporate galas and premium celebrations.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/F4zvqbFqsQI"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/puja-chatterjee/puja-chatterjee_9qaXpwN.jpg"
+      ]
+    }
+  },
+  {
+    "id": 109345,
+    "slug": "rupali-jagga",
+    "name": "Rupali Jagga",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/rupali-jagga",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/rupali-jagga"
+    },
+    "about": "Rupali Jagga, known as “The Shakira of India,” captivates audiences with her powerful voice and versatile blend of Bollywood, Punjabi, and indie music.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/YNRXma7KTRw"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/rupali-jagga/rupali-jagga.jpg"
+      ]
+    }
+  },
+  {
+    "id": 277677,
+    "slug": "sarthak",
+    "name": "Sarthak",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/sarthak",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": "Delhi",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/sarthak"
+    },
+    "about": "My USP as a performer lies in my ability to create memorable and engaging live music experiences for audiences of all kinds.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/sarthak/profile.jpg"
+      ]
+    }
+  },
+  {
+    "id": 276686,
+    "slug": "dhruv-7",
+    "name": "dhruv",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 46,
+    "source": {
+      "url": "https://starclinch.com/dhruv-7",
+      "input_category": "book-singer-online",
+      "input_page": 46
+    },
+    "location": {
+      "city": "Dehradun",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 33,
+        "max": 44
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/dhruv-7"
+    },
+    "about": "i am the s\ni am the super king of starclinch in in the upcoming years of i am the beuper king of starclinch in in the upcoming years of i am the best the dhruv arora",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/dhruv-7/profile.jpg"
+      ]
+    }
+  },
+  {
+    "id": 56184,
+    "slug": "harjit-harman",
+    "name": "Harjit Harman",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/harjit-harman",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": null,
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/harjit-harman"
+    },
+    "about": "Harjit Harman is a Punjabi folk and pop singer who broke through the scene in 1999 with the release of his debut album, 'Kuri Chiraan Ton Vichhari'",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://cdn.starclinch.in/artist/harjit-harman/harjit-harman-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 66340,
+    "slug": "kanth-kaler",
+    "name": "Kanth Kaler",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/kanth-kaler",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Nakoder",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/kanth-kaler"
+    },
+    "about": "One of the brightest stars among all the Punjabi folk singers, he has achieved all this fame through sheer hard work and dedication",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/t_ar-6eOTk4"
+      ],
+      "images": [
+        "https://cdn.starclinch.in/artist/kanth-kaler/kanth-kaler_dVEuGLW.jpg"
+      ]
+    }
+  },
+  {
+    "id": 267511,
+    "slug": "pritam-chakraborty",
+    "name": "Pritam Chakraborty",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/pritam-chakraborty",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Kolkata",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/pritam-chakraborty"
+    },
+    "about": "Does Pritam Chakraborty smoke: No (He quit smoking in 2012; used to smoke as many as 60 Cigarettes a day.).Does Pritam Chakraborty drink alcohol: Not Known.Although an insurance officer, Pritams father used to teach music to young kids at a very nominal fee. Hence, it comes as no surprise that his father played a significant role in fine-tuning his music skills.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/L3I7t_4nUEU",
+        "https://www.youtube.com/embed/S3pLJi7PN5E"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/pritam-chakraborty/pritam-chakraborty-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 154287,
+    "slug": "jasmine-sandalas",
+    "name": "Jasmine Sandalas",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/jasmine-sandalas",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 180
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/jasmine-sandalas"
+    },
+    "about": "Jasmine Sandlas is a versatile Indian singer, who has taken the Bollywood industry by storm",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/uFsV0ieoU-w",
+        "https://www.youtube.com/embed/NWBECQwGJ00",
+        "https://www.youtube.com/embed/zUBvkiRUp-g"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/jasmine-sandalas/jasmine-sandalas-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 10438,
+    "slug": "amit-trivedi",
+    "name": "Amit Trivedi",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/amit-trivedi",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/amit-trivedi"
+    },
+    "about": "Amit Trivedi is a well-known and established Bollywood singer who is known for his works in films like Dev D, etc.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/gSLiJZGSRW4",
+        "https://www.youtube.com/embed/tivLVmj0bpM"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/amit-trivedi/amit-trivedi-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 33674,
+    "slug": "dasu",
+    "name": "Dasu",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/dasu",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Coimbatore",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 120,
+        "max": 480
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Malayalam",
+        "Tamil"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/dasu"
+    },
+    "about": "Dasu is very influenced by artists who have the look, the voice, the dance moves, the music, and the ability to have a positive influence on the world!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/DxT2wBRwv8Y"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/dasu/dasu-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 158110,
+    "slug": "darshan-raval-238507",
+    "name": "Darshan Raval",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/darshan-raval-238507",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 180
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Gujarati",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/darshan-raval-238507"
+    },
+    "about": "The winner of India's Raw star, Darshan Raval is making big in the film industry with his phenomenal singing skills",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/7tspedfBvBM",
+        "https://www.youtube.com/embed/MZxo9CDAAtw",
+        "https://www.youtube.com/embed/nxDqOf7i8CU"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/darshan-raval-238507/darshan-raval-238507-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 111030,
+    "slug": "sajid-wajid",
+    "name": "Sajid Wajid",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/sajid-wajid",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 120,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/sajid-wajid"
+    },
+    "about": "The duo''s eagerness to experiment with new music forms and create unconventional melodies makes them one of the most sought after music directors",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/HYlpxRKGC_Y",
+        "https://www.youtube.com/embed/mqfdEeq0Oh0"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/sajid-wajid/sajid-wajid-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 115745,
+    "slug": "shafqat-amanat-ali",
+    "name": "Shafqat Amanat Ali",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/shafqat-amanat-ali",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/shafqat-amanat-ali"
+    },
+    "about": "A singer, songwriter, composer and a Bollywood-Sufi-fusion artist, Shafqat Amanat Ali is carrying forward the classical legacy of the Patiala Gharana",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/CTTC44J3fOQ",
+        "https://www.youtube.com/embed/jsibolCOJq0"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/shafqat-amanat-ali/shafqat-amanat-ali-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 260963,
+    "slug": "mc-stan",
+    "name": "MC Stan",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/mc-stan",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/mc-stan"
+    },
+    "about": "MC Stan is a well-known rapper who has dominated the Internet with his incredible rhymes. His tunes are really popular. Visit his YouTube page to see that he now has over 225 thousand subscribers. You’ll soon see him performing in motion pictures. His standing is getting better every day. He raps in Hindi and has his own unique style.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/gU74mNz64VU",
+        "https://www.youtube.com/embed/NiY3qPPZO8s"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/mc-stan/mc-stan-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 136028,
+    "slug": "the-richa-sharma",
+    "name": "The Richa Sharma",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/the-richa-sharma",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/the-richa-sharma"
+    },
+    "about": "Richa Sharma is a versatile singer who has sung many Bollywood songs including one of the longest track, 'Bidaai', from the film, Baabul, in 2006",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/8cywt621Yyk",
+        "https://www.youtube.com/embed/9imFyCMtUKo",
+        "https://www.youtube.com/embed/Nw9m2x8rUzo"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/the-richa-sharma/the-richa-sharma-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 5595,
+    "slug": "adnan-sami",
+    "name": "Adnan Sami",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/adnan-sami",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Karbi Anglong",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/adnan-sami"
+    },
+    "about": "Adnan Sami is a renowned singer, pianist, actor and composer; he has a command of Indian and Western Classical/Semi-Classical music, Jazz, and Rock!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/IU2ttJ73h2Y",
+        "https://www.youtube.com/embed/NgXrJH-9Syc",
+        "https://www.youtube.com/embed/kggmRyqZdeQ"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/adnan-sami/adnan-sami-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 23669,
+    "slug": "benny-dayal",
+    "name": "Benny Dayal",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/benny-dayal",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Talegaon Dabhade, Pune",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/benny-dayal"
+    },
+    "about": "Benny Dayal is so far known to be the ''sensational voice'' for this young generation and a versatile singer who achieved his milestone in Bollywood!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/0Yz1YwiqEsI",
+        "https://www.youtube.com/embed/1TOtrvJr8e4",
+        "https://www.youtube.com/embed/2Wazgc6eJJU"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/benny-dayal/benny-dayal-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 53663,
+    "slug": "ghazals-by-hariharan",
+    "name": "Ghazals by Hariharan",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/ghazals-by-hariharan",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 120,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/ghazals-by-hariharan"
+    },
+    "about": "Ghazals by Hariharan is another project by the famous singer, Hariharan, solely dedicated to ghazals and Hindustani music",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/01jJx0BPogc"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/ghazals-by-hariharan/ghazals-by-hariharan-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 91360,
+    "slug": "pankaj-kumar",
+    "name": "Pankaj Kumar",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 47,
+    "source": {
+      "url": "https://starclinch.com/pankaj-kumar",
+      "input_category": "book-singer-online",
+      "input_page": 47
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/pankaj-kumar"
+    },
+    "about": "With his strong fascination towards music and singing, Pankaj Kumar is proving to be one of the most versatile singers of all times",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/DeChWiiZDSE"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/pankaj-kumar/pankaj-kumar-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 108381,
+    "slug": "roop-kumar-and-sunali-rathod",
+    "name": "Roop Kumar and Sunali Rathod",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/roop-kumar-and-sunali-rathod",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Bengali",
+        "Hindi",
+        "Kannada",
+        "Tamil",
+        "Telugu"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/roop-kumar-and-sunali-rathod"
+    },
+    "about": "A couple that has made themselves an integral part of the Bollywood music industry and given their voices to the songs that have lasted for generations!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/8DzqawW7eXI",
+        "https://www.youtube.com/embed/9H4s0YlkME4",
+        "https://www.youtube.com/embed/HLhvUN4WljQ"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/roop-kumar-and-sunali-rathod/roop-kumar-and-sunali-rathod-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 10521,
+    "slug": "ammy-virk",
+    "name": "Ammy Virk",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/ammy-virk",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Pune",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/ammy-virk"
+    },
+    "about": "Ammy Virk , the Famous Punjabi singer who needs no introduction !",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/P586osbpgo4",
+        "https://www.youtube.com/embed/snb-h8zKE6M",
+        "https://www.youtube.com/embed/p8xUVO74YDU"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/ammy-virk/ammy-virk-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 263997,
+    "slug": "vidya-vox",
+    "name": "Vidya Vox",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/vidya-vox",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Virginia",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/vidya-vox"
+    },
+    "about": "At the age of five, she started learning Carnatic music. When she was eight years old, her family immigrated to the USA.Her father was very abusive towards her mother and also very controlling to the extent that he would order his family as to what they are supposed to wear and what they should do. When his abusive behaviour reached its limit, her mother left him with her daughter. This affected Vidya, as her music teacher refused to teach her music. Childhood Picture of Vidya and Her Sister.Vidya has learned Carnatic Classical music from D.K. Nagarajan, brother of late musician D. K. Pattammal.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/5nyFfZnsyNY",
+        "https://www.youtube.com/embed/eiGdsH1g20k"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/vidya-vox/vidya-vox-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 103579,
+    "slug": "rdb",
+    "name": "RDB",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/rdb",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/rdb"
+    },
+    "about": "RDB ,  Rhythm, Dhol and Bass, is one of the most famous Punjabi music bands in India and abroad!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/FfPpNpwaeIQ",
+        "https://www.youtube.com/embed/rJ95Y9xKYJ0",
+        "https://www.youtube.com/embed/RRkXXkqNBi0"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/rdb/rdb-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 61015,
+    "slug": "ishani-dave",
+    "name": "Ishani Dave",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/ishani-dave",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Ahmedabad",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 60
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Gujarati",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/ishani-dave"
+    },
+    "about": "Ishani is a Gujarati and Hindi folk singer who started singing since the very tender age of three!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/_xrBJcyX5MQ",
+        "https://www.youtube.com/embed/cqHihJjFzbs"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/ishani-dave/ishani-dave-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 67107,
+    "slug": "karthik-160652",
+    "name": "Karthik",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/karthik-160652",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Chennai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 180
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi",
+        "Kannada",
+        "Malayalam",
+        "Tamil",
+        "Telugu"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/karthik-160652"
+    },
+    "about": "Introduced by the maestro himself, AR Rahman, Karthik has sung over 4000 songs in seven different languages",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://artistsimages.b-cdn.net/karthik-160652/karthik-160652-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 100366,
+    "slug": "raghav-sachar",
+    "name": "Raghav Sachar",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/raghav-sachar",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/raghav-sachar"
+    },
+    "about": "Currently, he plays 33 musical instruments and arranges, programs, mixes, and masters his own music",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/6R-8VRLBIZI",
+        "https://www.youtube.com/embed/D8EduMo-65Q",
+        "https://www.youtube.com/embed/Ekoym0bcng8"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/raghav-sachar/raghav-sachar-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 116542,
+    "slug": "shaarib-toshi",
+    "name": "Sharib & Toshi",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/shaarib-toshi",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/shaarib-toshi"
+    },
+    "about": "Sharib-Toshi, a fantastic brother duo, is one of the most dynamic music directors, singers and performers from Mumbai!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/GCHY_0BvoSw",
+        "https://www.youtube.com/embed/Pd_UxiaAK0A",
+        "https://www.youtube.com/embed/wf_A7-97PCw"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/shaarib-toshi/shaarib-toshi-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 161570,
+    "slug": "sunanda-sharma-241076",
+    "name": "Sunanda Sharma",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/sunanda-sharma-241076",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Chandigarh",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 180
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/sunanda-sharma-241076"
+    },
+    "about": "A sensational talent, her fantastic expressions go along perfectly with her perfect voice!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/O3Z_LKxPJXQ",
+        "https://www.youtube.com/embed/JkXbPc5UMco",
+        "https://www.youtube.com/embed/Nc0ZCtZdgAk"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/sunanda-sharma-241076/sunanda-sharma-241076-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 156731,
+    "slug": "aditi-singh-sharma",
+    "name": "Aditi Singh Sharma",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/aditi-singh-sharma",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 180
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/aditi-singh-sharma"
+    },
+    "about": "Aditi Singh Sharma is a renowned versatile playback singer!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/IUe4R_FZe7k",
+        "https://www.youtube.com/embed/m3wAFGeuUNw"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/aditi-singh-sharma/aditi-singh-sharma-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 117276,
+    "slug": "shibani-kashyap",
+    "name": "Shibani Kashyap",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/shibani-kashyap",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/shibani-kashyap"
+    },
+    "about": "Shibani Kashyap is a successful Indian singer who has given both Bollywood and pop hits besides lending her voice to some very popular brands!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/0FFvBuPjB-o",
+        "https://www.youtube.com/embed/eHLmUbhyc1k",
+        "https://www.youtube.com/embed/haKZX2qaDn0"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/shibani-kashyap/shibani-kashyap-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 119046,
+    "slug": "shruti-pathak",
+    "name": "Shruti Pathak",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/shruti-pathak",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/shruti-pathak"
+    },
+    "about": "Shruti Pathak is a renowned singer, song writer and a composer based in Mumbai.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/AlfHG9wRWMw",
+        "https://www.youtube.com/embed/mOc4waBDorI",
+        "https://www.youtube.com/embed/SxS7Ta5LyD4"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/shruti-pathak/shruti-pathak-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 120149,
+    "slug": "siddharth-slathia",
+    "name": "Siddharth Slathia",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/siddharth-slathia",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Jammu",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/siddharth-slathia"
+    },
+    "about": "24 year old, Jammu-based Siddharth is an aspiring singer who is paving his way to fulfill his passion through YouTube and Facebook!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/2ZlCp4wLipg",
+        "https://www.youtube.com/embed/B4mc4YScXVM"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/siddharth-slathia/siddharth-slathia-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 91056,
+    "slug": "pammi-bai",
+    "name": "Pammi Bai",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/pammi-bai",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Jalandhar",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 60
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/pammi-bai"
+    },
+    "about": "A noted and highly regarded figure in the world of folk music, Pammi Bai does not need an introduction to the lovers of Punjabi folk and Bhangra.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://artistsimages.b-cdn.net/pammi-bai/pammi-bai-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 92814,
+    "slug": "pawni-pandey",
+    "name": "Pawni Pandey",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 48,
+    "source": {
+      "url": "https://starclinch.com/pawni-pandey",
+      "input_category": "book-singer-online",
+      "input_page": 48
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/pawni-pandey"
+    },
+    "about": "Pawni is a famous Bollywood singer who rose to fame after release of her song, Laila O Laila, from Raees; she has performed in several reality shows as well!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/M_-XHK6wQ1A"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/pawni-pandey/pawni-pandey-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 13018,
+    "slug": "andrea-jeremiah-247323",
+    "name": "Andrea Jeremiah",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/andrea-jeremiah-247323",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Hyderabad",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/andrea-jeremiah-247323"
+    },
+    "about": "A multi-talented singer, Andrea Jeremiah is also a popular actress. She has been nominated for Filmfare & Vijay Awards several times for her singing.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://artistsimages.b-cdn.net/andrea-jeremiah-247323/andrea-jeremiah-247323-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 16251,
+    "slug": "anushka-manchanda",
+    "name": "Anushka Manchanda",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/anushka-manchanda",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Bangalore",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/anushka-manchanda"
+    },
+    "about": "Anushka Manchanda, a Bollywood pop Singer, actress who got fame from her band named ViVa Girls!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/8PXMWV-hsEo",
+        "https://www.youtube.com/embed/w34zKvaBRCk",
+        "https://www.youtube.com/embed/nUjaxGfDTs4"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/anushka-manchanda/anushka-manchanda-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 18614,
+    "slug": "arun-chillara",
+    "name": "Arun Chillara",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/arun-chillara",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Burdwan",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": null,
+        "max": null
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": []
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/arun-chillara"
+    },
+    "about": "Arun's love for music is unconditional and has won many awards and recognition",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/f-qsbvPkTr4",
+        "https://www.youtube.com/embed/7oMooc1nxh4"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/arun-chillara/arun-chillara-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 165332,
+    "slug": "aditi-singh-sharma-2",
+    "name": "Aditi Singh Sharma",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/aditi-singh-sharma-2",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 180
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/aditi-singh-sharma-2"
+    },
+    "about": "Famous playback singer from Bollywood having quite a many chartbusters.",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://artistsimages.b-cdn.net/aditi-singh-sharma-2/aditi-singh-sharma-2-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 65728,
+    "slug": "kamal-heer",
+    "name": "Kamal Heer",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/kamal-heer",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Chandigarh",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/kamal-heer"
+    },
+    "about": "Kamal Heer's album Kamli, in 2000, was welcomed by music critique as a new milestone in Punjabi music!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/hpI1WXJTqE4",
+        "https://www.youtube.com/embed/J-QeoRzV_dc",
+        "https://www.youtube.com/embed/nCjlLSAkv_4"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/kamal-heer/kamal-heer-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 267424,
+    "slug": "kamaal-khan",
+    "name": "Kamaal Khan",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/kamaal-khan",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Highgate",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/kamaal-khan"
+    },
+    "about": "Does Kamaal Khan Smoke: Not Known.Does Kamaal Khan drink alcohol: Not Known.Kamaal wrote and produced his first single O Oh Jaane Jaana which was earlier released in London in 1996. It was an instant hit in the UK and was released worldwide in 1998. The song was also featured in Bollywood film Pyaar Kiya To Darna Kya starring Salman Khan and Kajol. The song had a record sale of over 10 million copies.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/HGqkmCWuM0s",
+        "https://www.youtube.com/embed/8RCyp4ZLAek"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/kamaal-khan/kamaal-khan-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 267678,
+    "slug": "jasbir-jassi",
+    "name": "Jasbir Jassi",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/jasbir-jassi",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Dalia Mirjanpur, Gurdaspur",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/jasbir-jassi"
+    },
+    "about": "Jasbir Jassi is an Indian singer, lyricist, and actor known for his iconic Punjabi folk melodies and songs including Dil Le Gayee Kudi and Koka. He has also sung for many popular Bollywood films such as Dobara (2004), Patiala House (2011), and Kesari (2019).Jassi, as a child, used to play the harmonium. Jasbir Jassi at a young age.Jasbir Jassi considers Bhagat Singh, an Indian revolutionary freedom fighter, his idol. Jasbir Jassi paying his tribute to Bhagat Singh at an event.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/SNxzxxbUMts",
+        "https://www.youtube.com/embed/-VrkmhUsh34"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/jasbir-jassi/jasbir-jassi-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 268195,
+    "slug": "salman-ali",
+    "name": "Salman Ali",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/salman-ali",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/salman-ali"
+    },
+    "about": "",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/GPN9oZ8e-h4"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/salman-ali/salman-ali-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 37937,
+    "slug": "dilpreet-dhillon",
+    "name": "Dilpreet Dhillon",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/dilpreet-dhillon",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Chandigarh",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/dilpreet-dhillon"
+    },
+    "about": "With just a couple of Punjabi songs, he became one of the most famous Punjabi singers among the youth of India!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/jTNKl_Ifkqc",
+        "https://www.youtube.com/embed/x51I9PV8B3Y"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/dilpreet-dhillon/dilpreet-dhillon-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 38769,
+    "slug": "divya-kumar",
+    "name": "Divya Kumar",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/divya-kumar",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/divya-kumar"
+    },
+    "about": "A talenthouse who is known for his perfect blend of being desi and his signature voice that makes a lasting impression on his audience!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/uFsV0ieoU-w",
+        "https://www.youtube.com/embed/9mraClpC-uM",
+        "https://www.youtube.com/embed/el3i9_xGEYw"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/divya-kumar/divya-kumar-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 52418,
+    "slug": "gajendra-verma",
+    "name": "Gajendra Verma",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/gajendra-verma",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/gajendra-verma"
+    },
+    "about": "Ganjendra is a well known for singer and is known for his song, Emptiness, that garnered him over a million followers",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/c-alqXdZWqc",
+        "https://www.youtube.com/embed/fb10JkIFVtg",
+        "https://www.youtube.com/embed/Qvd-I7lTecI?listawvTHuTMYo9oPu4gvpGjknhsTD"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/gajendra-verma/gajendra-verma-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 127049,
+    "slug": "sukshinder-shinda",
+    "name": "Sukshinder Shinda",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/sukshinder-shinda",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Chandigarh",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/sukshinder-shinda"
+    },
+    "about": "A legendary international Punjabi singer whose magnificent personality has won millions of hearts!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/8UTwmZspgPs",
+        "https://www.youtube.com/embed/HlMrEmu1U-o",
+        "https://www.youtube.com/embed/tZh72ds04iI"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/sukshinder-shinda/sukshinder-shinda-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 76629,
+    "slug": "manj-musik",
+    "name": "Manj Musik",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/manj-musik",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/manj-musik"
+    },
+    "about": "Manj is the lead vocalist for RDB group; his English and Punjabi style of rapping makes him different!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/5mf6lmBO_mg",
+        "https://www.youtube.com/embed/iJSkq3UunxU",
+        "https://www.youtube.com/embed/TQuBZLsf-zE"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/manj-musik/manj-musik-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 79614,
+    "slug": "meiyang-chang",
+    "name": "Meiyang Chang",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/meiyang-chang",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/meiyang-chang"
+    },
+    "about": "A well-known singer, host, and dancer who was a finalist in Indian Idol and also won Jhalak Dikhla Jaa Season 4!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/aSyc0PYL2p4",
+        "https://www.youtube.com/embed/haa5ibVe5kI",
+        "https://www.youtube.com/embed/kd9z-0YffmE"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/meiyang-chang/meiyang-chang-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 81131,
+    "slug": "mohammed-irfan",
+    "name": "Mohammed Irfan",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 49,
+    "source": {
+      "url": "https://starclinch.com/mohammed-irfan",
+      "input_category": "book-singer-online",
+      "input_page": 49
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/mohammed-irfan"
+    },
+    "about": "A super talented singer who has already made his mark in the Bollywood industry with his ever so soulful and melodious voice!",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://artistsimages.b-cdn.net/mohammed-irfan/mohammed-irfan-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 67812,
+    "slug": "kavita-krishnamurthy-subramaniam",
+    "name": "Kavita Krishnamurthy Subramaniam",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/kavita-krishnamurthy-subramaniam",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/kavita-krishnamurthy-subramaniam"
+    },
+    "about": "Having worked with four generations of musicians and having sung over 15,000 songs in 16 languages in various genres!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/9isnzNLh4Bw",
+        "https://www.youtube.com/embed/FZe9leiEy3I",
+        "https://www.youtube.com/embed/IbEaIMZC2Is"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/kavita-krishnamurthy-subramaniam/kavita-krishnamurthy-subramaniam-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 55895,
+    "slug": "hard-kaur",
+    "name": "Hard Kaur",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/hard-kaur",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/hard-kaur"
+    },
+    "about": "Her rise to the top of the celebrity tree in Bollywood has been one of the biggest success stories for any solo British Asian entertainer in the past ten years",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/OG0xt2xTq4A",
+        "https://www.youtube.com/embed/zejs7ZFdZbw"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/hard-kaur/hard-kaur-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 87041,
+    "slug": "nikhil-dsouza",
+    "name": "Nikhil D'souza",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/nikhil-dsouza",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/nikhil-dsouza"
+    },
+    "about": "Nikhil D'Souza is a renowned guitarist, singer and a songwriter from Mumbai; he was also the South Asia Soloist Winner at SUTASI'09!",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/QbirWuKPC-Y"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/nikhil-dsouza/nikhil-dsouza-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 107300,
+    "slug": "rodney",
+    "name": "Rodney",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/rodney",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/rodney"
+    },
+    "about": "Rodney is one of the world's greatest entertainer and performer; he is very talented, creative and innovative",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/6wusDUA7BO4"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/rodney/rodney-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 116169,
+    "slug": "shalmali-kholgade",
+    "name": "Shalmali Kholgade",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/shalmali-kholgade",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/shalmali-kholgade"
+    },
+    "about": "Shalmali Kholgade is a professional singer who predominantly sings for the Hindi language films and has won a Filmfare award",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/lGHw4MWiEqI"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/shalmali-kholgade/shalmali-kholgade-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 4557,
+    "slug": "achint-thakkar",
+    "name": "Achint Thakkar",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/achint-thakkar",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "Kolkata",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/achint-thakkar"
+    },
+    "about": "Achint's music consists of sounds from different parts of the world, coupled with electronic arrangements",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/jdhGN-hhf40",
+        "https://www.youtube.com/embed/K__Y1vBqGA4",
+        "https://www.youtube.com/embed/wZS-F-tK5hg"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/achint-thakkar/achint-thakkar-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 6410,
+    "slug": "aishwarya-majmudar",
+    "name": "Aishwarya Majmudar",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/aishwarya-majmudar",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "New Delhi",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/aishwarya-majmudar"
+    },
+    "about": "Her mother and father recorded some of her performances and sent them to Zee TV, after which she was selected for Sa Re Ga Ma Pa",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/cp-a3hzLxKg",
+        "https://www.youtube.com/embed/ROvXbt6iQRM"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/aishwarya-majmudar/aishwarya-majmudar-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 117604,
+    "slug": "shilpa-rao",
+    "name": "Shilpa Rao",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/shilpa-rao",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/shilpa-rao"
+    },
+    "about": "A distinctly soulful voice behind foot-tapping chartbusters that held sway over the nation, Shilpa Rao believes in donning several hats at the same time",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/30uYV6EzV5Y",
+        "https://www.youtube.com/embed/NS5NeNH77xk"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/shilpa-rao/shilpa-rao-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 115844,
+    "slug": "shahid-mallya",
+    "name": "Shahid Mallya",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/shahid-mallya",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/shahid-mallya"
+    },
+    "about": "Born to a musical family, Shahid Mallya has sung many super hit Bollywood songs",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/dLSEeAZNgJI"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/shahid-mallya/shahid-mallya-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 117761,
+    "slug": "shipra-goyal",
+    "name": "Shipra Goyal",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/shipra-goyal",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/shipra-goyal"
+    },
+    "about": "Shipra Goyal is a Bollywood playback singer with hit songs like Yaadan Teriyaan, Tutti Bole Wedding Di, and Ishq Bulava in her court!",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://artistsimages.b-cdn.net/shipra-goyal/shipra-goyal-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 7427,
+    "slug": "akriti-kakar",
+    "name": "Akriti Kakar",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/akriti-kakar",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "New Delhi",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 120
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/akriti-kakar"
+    },
+    "about": "GIMA award-winner Akriti Kakar is a versatile Bollywood playback singer who has rendered countless hits with popular music directors of India",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/D5ubYExrsDY",
+        "https://www.youtube.com/embed/ETMSo7Dfy2M",
+        "https://www.youtube.com/embed/mfA7jymSGpg"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/akriti-kakar/akriti-kakar-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 156755,
+    "slug": "vasundhara-das",
+    "name": "Vasundhara Das",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/vasundhara-das",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "Bangalore",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 90,
+        "max": 180
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Tamil"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/vasundhara-das"
+    },
+    "about": "A talented and a versatile singer, a successful actor, and an entrepreneur too, Vasundhara Das is one of the most multi-talented artist India has to offer.",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/5ov8b8kt9e4",
+        "https://www.youtube.com/embed/BwrE3lM5mp0"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/vasundhara-das/vasundhara-das-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 63228,
+    "slug": "jeet-gannguli",
+    "name": "Jeet Gannguli",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/jeet-gannguli",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Bengali",
+        "Hindi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/jeet-gannguli"
+    },
+    "about": "Jeet is trained in Indian classical music under his father, and has studied jazz, Western classical music and rock from the famed guitarist Karlton Kitto",
+    "faq": [],
+    "media": {
+      "videos": [],
+      "images": [
+        "https://artistsimages.b-cdn.net/jeet-gannguli/jeet-gannguli-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 69829,
+    "slug": "krishna-beuraa",
+    "name": "Krishna Beuraa",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/krishna-beuraa",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "Mumbai",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "English",
+        "Hindi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/krishna-beuraa"
+    },
+    "about": "Krishna Beuraa is an Indian playback singer who has sung songs in commercial Hindi and Oriya cinema",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/_2v1L1iLiYE",
+        "https://www.youtube.com/embed/ZQzrZT21sWQ"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/krishna-beuraa/krishna-beuraa-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": 97067,
+    "slug": "preet-harpal",
+    "name": "Preet Harpal",
+    "category": "SINGER",
+    "input_category": "book-singer-online",
+    "input_page": 50,
+    "source": {
+      "url": "https://starclinch.com/preet-harpal",
+      "input_category": "book-singer-online",
+      "input_page": 50
+    },
+    "location": {
+      "city": "Chandigarh",
+      "state": null,
+      "country": "India"
+    },
+    "performance": {
+      "duration_minutes": {
+        "min": 60,
+        "max": 90
+      },
+      "team_members": {
+        "min": null,
+        "max": null
+      },
+      "genres": [],
+      "languages": [
+        "Hindi",
+        "Punjabi"
+      ]
+    },
+    "booking": {
+      "url": "https://starclinch.com/cart/checkout/preet-harpal"
+    },
+    "about": "Preet Harpal is one of those artists who choose their songs very carefully and make sure that it is a superhit",
+    "faq": [],
+    "media": {
+      "videos": [
+        "https://www.youtube.com/embed/IjkyasAUUWY",
+        "https://www.youtube.com/embed/msjCXKJ3mwo",
+        "https://www.youtube.com/embed/oiisbRQYutQ"
+      ],
+      "images": [
+        "https://artistsimages.b-cdn.net/preet-harpal/preet-harpal-1.jpg"
+      ]
+    }
   }
 ]
