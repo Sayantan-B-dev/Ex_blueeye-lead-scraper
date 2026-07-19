@@ -1,6 +1,12 @@
 # BlueEye — Lead Scraping & Data Pipeline
 
-A multi-source lead-generation toolkit that scrapes business/artist profiles from **Google Maps** (India + global), **JustDial**, and **StarClinch**, then enriches them with emails, migrates images to ImageKit, and produces analytics dashboards.
+A multi-source lead-generation toolkit that scrapes business/artist profiles from **Google Maps** (India + global), **JustDial**, and **StarClinch**, enriches them with **emails** (`taskFetchEmail`), migrates artist images to **ImageKit**, and produces analytics dashboards.
+
+### Sources & tools
+- **Google Maps** — two methods: `method1/` Playwright (Python) and `method2/` gosom Docker (Go); plus `Global_scrape_map/` for 59-country global coverage.
+- **JustDial** — `JustDial/` Node.js scraper (27 Indian cities).
+- **StarClinch** — `Starclinch/` artist scraper + ImageKit image migration.
+- **Email enrichment** — `taskFetchEmail/` email fetcher that adds `website_status` + `emails` to Maps leads.
 
 ---
 
@@ -9,7 +15,8 @@ A multi-source lead-generation toolkit that scrapes business/artist profiles fro
 | Module | Source | Scope | Engine | Status |
 |--------|--------|-------|--------|--------|
 | `Global_scrape_map/` | Google Maps | 59 countries, 26,143 queries | gosom Docker (Go) | ✅ 74,128 leads |
-| `method1/` + `method2/` | Google Maps | 27 Indian cities | Playwright (Py) / gosom Docker | P1 done (5,874 leads) |
+| `method1/` | Google Maps (India) | 27 Indian cities | Playwright (Python) | 🔄 not started |
+| `method2/` | Google Maps (India) | 27 Indian cities | gosom Docker (Go) | P1 done (5,874 leads) |
 | `taskFetchEmail/` | Emails | Enrich Maps leads | Python + requests | 🔄 running |
 | `JustDial/` | JustDial | 27 Indian cities, 432 queries | Node.js scraper | ✅ 4,175 cleaned leads |
 | `Starclinch/` | StarClinch | Artist profiles | Node.js + ImageKit | ✅ migration done |
