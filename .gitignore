@@ -75,3 +75,14 @@ Starclinch/link_scrapper/logs/
 Starclinch/link_scrapper/tools/
 
 Starclinch/link_scrapper/reference/existing_data.json
+
+Starclinch/data_modifier/input_data/*
+Starclinch/data_modifier/output_data/*
+Starclinch/data_modifier/logs/*
+Starclinch/data_modifier/.env
+Starclinch/data_modifier/logs/*
+Starclinch/data_modifier/artists.json
+Starclinch/data_modifier/existing_data.json
+
+# StarClinch data_modifier — generated pipeline outputs (reproducible from scripts)
+Starclinch/data_modifier/output_json/*
