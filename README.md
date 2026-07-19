@@ -96,6 +96,40 @@ python scraper_v1.py
 
 ---
 
+## StarClinch Artist Migration (`Starclinch/`)
+
+Scrapes artist profiles from StarClinch and migrates their image assets into ImageKit. Two sub-projects:
+
+### Link Scraper (`Starclinch/link_scrapper/`)
+Crawls StarClinch category pages and collects artist profile URLs + raw data into `data/artists.json` and `data/state.json`.
+
+### Data Modifier Pipeline (`Starclinch/data_modifier/`)
+
+7-stage migration pipeline that cleans the scraped artist data and migrates images to ImageKit.
+
+| Stage | Script | Purpose | Status |
+|-------|--------|---------|--------|
+| 1 | `1_remove_duplicates.js` | Dedupe artists | ✅ |
+| 2 | `2_rename_categories.js` | Normalize category names | ✅ |
+| 3 | `3_split_null_free.js` | Split null-free subset | ✅ |
+| 4 | `4_image_migrate.js` | **ImageKit image migration** (consolidated, resume-safe, reuse-existing) | ✅ |
+| 5 | `5_anti_copyright.js` | Anti-copyright check | 🔲 stub |
+| 6 | `6_final_verification_before_uploading.js` | Pre-upload verification | 🔲 stub |
+| 7 | `7_upload_to_db.js` | Upload to DB | 🔲 stub |
+
+Stage 4 produces `output_json/4_imaged_migration_final.json` (9,012 records, 0 foreign links, 89 blanked dead-link failures).
+
+```bash
+cd Starclinch/data_modifier
+npm install
+node scripts/4_image_migrate.js      # run the core migration
+# open view.html and point config.js at the output JSON to browse results
+```
+
+> Generated outputs in `output_json/` and `input_data/` are gitignored (reproducible from scripts). `.env` holds ImageKit keys.
+
+---
+
 ## Directory Structure
 
 ```
@@ -108,6 +142,9 @@ scraping_info/
 ├── method1/                      # Playwright scraper (India cities)
 ├── method2/                      # gosom Docker scraper (India P1 done)
 ├── taskFetchEmail/               # Legacy email enrichment
+├── Starclinch/                   # StarClinch artist scrape + ImageKit migration
+│   ├── link_scrapper/            # Artist URL/data crawler
+│   └── data_modifier/            # 7-stage migration pipeline (scripts/ + view.html)
 └── Global_scrape_map/            # Global 59-country scraper
     ├── run.bat / run.ps1         # Convenience launchers
     ├── country.txt               # 59 target countries
