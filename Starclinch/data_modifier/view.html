@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StarClinch // ARTIST-SCAN</title>
+<style>
+  :root {
+    --bg: #05070a;
+    --panel: #0a0e14;
+    --panel2: #0d1219;
+    --line: #1c2733;
+    --line2: #243345;
+    --text: #c8d6e5;
+    --dim: #5b6b7d;
+    --grn: #29e07a;
+    --amb: #ffb000;
+    --cyn: #19d3e0;
+    --red: #ff4d5e;
+    --mono: "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code", Consolas, "Liberation Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--mono);
+    background:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 3px),
+      radial-gradient(900px 600px at 100% -10%, rgba(25,211,224,0.07), transparent 55%),
+      radial-gradient(900px 600px at 0% 110%, rgba(41,224,122,0.06), transparent 55%),
+      var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 18px 16px 36px;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+
+  .topbar {
+    border: 1px solid var(--line);
+    background: linear-gradient(180deg, var(--panel2), var(--panel));
+    padding: 7px 10px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand { font-weight: 700; letter-spacing: 2px; color: var(--grn); text-shadow: 0 0 12px rgba(41,224,122,0.45); font-size: 12px; }
+  .brand .blink { animation: blink 1.1s steps(2,start) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .meta { color: var(--dim); font-size: 10px; letter-spacing: 1px; }
+  .meta b { color: var(--cyn); }
+
+  .nav {
+    display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0;
+    border-bottom: 1px solid var(--line); padding-bottom: 8px;
+  }
+  .nav button {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 1px;
+    color: var(--dim); background: var(--panel); border: 1px solid var(--line2);
+    padding: 5px 10px; cursor: pointer; text-transform: uppercase;
+    clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px));
+    transition: .15s;
+  }
+  .nav button:hover { color: var(--cyn); border-color: var(--cyn); }
+  .nav button.active {
+    color: var(--bg); background: var(--grn); border-color: var(--grn);
+    box-shadow: 0 0 10px rgba(41,224,122,0.5); font-weight: 700;
+  }
+  .loading { color: var(--amb); font-size: 10px; margin: 10px 0; letter-spacing: 1px; }
+
+  .drop {
+    border: 1px dashed var(--line2);
+    background: var(--panel);
+    padding: 16px; text-align: center; color: var(--dim);
+    margin: 12px 0 14px; transition: .15s; font-size: 11px;
+  }
+  .drop.over { border-color: var(--cyn); color: var(--cyn); background: rgba(25,211,224,0.05); }
+  .drop input { display: none; }
+  .drop label { color: var(--cyn); cursor: pointer; text-decoration: underline; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; }
+  .card {
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 9px 11px;
+    position: relative;
+    clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
+  }
+  .card::after {
+    content: ""; position: absolute; left: 0; top: 0; width: 2px; height: 100%;
+    background: var(--grn); box-shadow: 0 0 8px var(--grn);
+  }
+  .card.cyn::after { background: var(--cyn); box-shadow: 0 0 8px var(--cyn); }
+  .card.amb::after { background: var(--amb); box-shadow: 0 0 8px var(--amb); }
+  .card .num { font-size: 21px; font-weight: 700; letter-spacing: -1px; color: var(--text); }
+  .card .lbl { color: var(--dim); font-size: 9px; margin-top: 3px; text-transform: uppercase; letter-spacing: 1px; }
+  .card .pct { font-size: 9.5px; margin-top: 2px; color: var(--grn); }
+  .card.cyn .pct { color: var(--cyn); }
+  .card.amb .pct { color: var(--amb); }
+
+  section { margin-top: 16px; border: 1px solid var(--line); background: var(--panel); }
+  .sec-h {
+    border-bottom: 1px solid var(--line);
+    padding: 5px 10px; color: var(--cyn); font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .sec-h::before { content: "▸"; color: var(--grn); }
+  .sec-b { padding: 9px 10px; }
+
+  .bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 10.5px; }
+  .bar-row .name { width: 130px; flex-shrink: 0; color: var(--text); }
+  .bar-track { flex: 1; background: #0c1219; border: 1px solid var(--line); height: 8px; position: relative; }
+  .bar-fill { height: 100%; width: 0; background: var(--grn); box-shadow: 0 0 6px rgba(41,224,122,0.5); transition: width .9s cubic-bezier(.2,.8,.2,1); }
+  .bar-fill.cyn { background: var(--cyn); box-shadow: 0 0 6px rgba(25,211,224,0.5); }
+  .bar-fill.amb { background: var(--amb); box-shadow: 0 0 6px rgba(255,176,0,0.5); }
+  .bar-fill.bad { background: var(--red); box-shadow: 0 0 6px rgba(255,77,94,0.5); }
+  .bar-row .val { width: 116px; text-align: right; color: var(--dim); flex-shrink: 0; font-size: 10px; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 780px) { .two { grid-template-columns: 1fr; } }
+
+  .chip {
+    display: inline-block; border: 1px solid var(--line2); background: var(--panel2);
+    padding: 3px 7px; margin: 3px 3px 0 0; font-size: 10px;
+  }
+  .chip.ok { color: var(--grn); border-color: rgba(41,224,122,0.35); }
+  .chip.warn { color: var(--amb); border-color: rgba(255,176,0,0.35); }
+  .hidden { display: none; }
+
+  footer { margin-top: 20px; color: var(--dim); font-size: 9.5px; text-align: center; letter-spacing: 1px; }
+  .cursor { display:inline-block; width:7px; height:11px; background:var(--grn); vertical-align:middle; animation: blink 1.1s steps(2,start) infinite; margin-left:2px; }
+  @keyframes fade { to { opacity: 1; } }
+</style>
+</head>
+<body>
+  <!--
+    Data source: tabs defined in config.js -> window.ANALYSE_FILES (your bridge to .env).
+    Each tab loads a JSON file from output_json/ or input_data/ and runs analyze() on it.
+    Override via ?url= query param if needed.
+  -->
+  <script src="config.js"></script>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">STARCLINCH<span class="blink">_</span> // ARTIST-SCAN</div>
+      <div class="meta">src: <b id="src-label">—</b> · mode: <b>READ</b></div>
+    </div>
+
+    <div class="nav" id="nav"></div>
+    <div class="loading hidden" id="loading">▸ loading…</div>
+
+    <div class="drop" id="drop">
+      <p style="margin:0 0 6px;">drag <b>artists.json</b> &rarr; or <label for="file">[ browse ]</label></p>
+      <input type="file" id="file" accept=".json" />
+    </div>
+
+    <div id="report" class="hidden">
+      <div class="grid" id="cards"></div>
+
+      <section>
+        <div class="sec-h">Field Completeness</div>
+        <div class="sec-b" id="completeness"></div>
+      </section>
+
+      <div class="two">
+        <section>
+          <div class="sec-h">By Category</div>
+          <div class="sec-b" id="categories"></div>
+        </section>
+        <section>
+          <div class="sec-h">Top Cities</div>
+          <div class="sec-b" id="cities"></div>
+        </section>
+      </div>
+
+      <section>
+        <div class="sec-h">Positive Highlights</div>
+        <div class="sec-b" id="highlights"></div>
+      </section>
+
+      <section>
+        <div class="sec-h">Improvement Areas</div>
+        <div class="sec-b" id="gaps"></div>
+      </section>
+    </div>
+
+    <footer>// self-contained terminal viewer · parsed client-side · no egress<span class="cursor"></span></footer>
+  </div>
+
+<script>
+const FILES = (window.ANALYSE_FILES && Object.keys(window.ANALYSE_FILES).length)
+  ? window.ANALYSE_FILES
+  : { "Null Free": "output_json/3_null_free.json" };
+const DEFAULT_KEY = window.ANALYSE_DEFAULT && FILES[window.ANALYSE_DEFAULT]
+  ? window.ANALYSE_DEFAULT
+  : Object.keys(FILES)[0];
+
+const labelEl = document.getElementById('src-label');
+const loadingEl = document.getElementById('loading');
+const navEl = document.getElementById('nav');
+
+function buildNav() {
+  Object.keys(FILES).forEach(k => {
+    const b = document.createElement('button');
+    b.textContent = k;
+    b.dataset.key = k;
+    if (k === DEFAULT_KEY) b.classList.add('active');
+    b.addEventListener('click', () => {
+      document.querySelectorAll('#nav button').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      loadFile(FILES[k], k);
+    });
+    navEl.appendChild(b);
+  });
+}
+
+function loadFile(url, label) {
+  labelEl.textContent = label || url;
+  loadingEl.classList.remove('hidden');
+  document.getElementById('report').classList.add('hidden');
+  fetch(url)
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(data => {
+      loadingEl.classList.add('hidden');
+      if (Array.isArray(data)) {
+        analyze(data);
+        document.getElementById('drop').classList.add('hidden');
+      } else {
+        alert('expected a JSON array in ' + url);
+      }
+    })
+    .catch(err => {
+      loadingEl.classList.add('hidden');
+      alert('failed to load ' + url + '\n' + err.message);
+    });
+}
+
+buildNav();
+loadFile(FILES[DEFAULT_KEY], DEFAULT_KEY);
+
+
+function pct(n, d) { return d ? ((n / d) * 100).toFixed(1) + '%' : '0%'; }
+
+function barRow(name, have, total, delay, forceCls) {
+  const p = total ? (have / total) * 100 : 0;
+  const cls = forceCls || (p >= 90 ? '' : p >= 60 ? 'amb' : 'bad');
+  return `<div class="bar-row" style="opacity:0; animation: fade .4s ease ${delay}ms forwards">
+    <div class="name">${name}</div>
+    <div class="bar-track"><div class="bar-fill ${cls}" data-w="${p.toFixed(1)}"></div></div>
+    <div class="val">${have}/${total} · ${pct(have, total)}</div>
+  </div>`;
+}
+
+function animateBars(scope) {
+  scope.querySelectorAll('.bar-fill').forEach(el => requestAnimationFrame(() => el.style.width = el.dataset.w + '%'));
+}
+
+function analyze(data) {
+  const total = data.length;
+  let withImg=0, withVid=0, withCity=0, withAbout=0, withLang=0, withDur=0, withCat=0;
+  let totalVideos=0, fullyComplete=0;
+  const cats={}, cities={};
+
+  for (const a of data) {
+    const img = a.media?.images?.length > 0;
+    const vid = a.media?.videos?.length > 0;
+    const city = !!(a.location?.city);
+    const about = !!(a.about && String(a.about).trim());
+    const lang = a.performance?.languages?.length > 0;
+    const dur = a.performance?.duration_minutes && a.performance.duration_minutes.min !== null;
+    const cat = !!(a.category);
+    if (img) withImg++;
+    if (vid) { withVid++; totalVideos += a.media.videos.length; }
+    if (city) withCity++;
+    if (about) withAbout++;
+    if (lang) withLang++;
+    if (dur) withDur++;
+    if (cat) withCat++;
+    if (img && vid && city && about && lang && dur && cat) fullyComplete++;
+    const c = String(a.category || 'UNKNOWN'); cats[c] = (cats[c]||0)+1;
+    const ct = String(a.location?.city || 'unknown'); cities[ct] = (cities[ct]||0)+1;
+  }
+
+  const cards = [
+    { num: total, lbl: 'Total Artists', c: '' },
+    { num: withImg, lbl: 'Profile Image', pct: pct(withImg, total), c: 'cyn' },
+    { num: withVid, lbl: 'Has Video', pct: pct(withVid, total), c: 'cyn' },
+    { num: withCity, lbl: 'Has City', pct: pct(withCity, total), c: '' },
+    { num: withLang, lbl: 'Languages', pct: pct(withLang, total), c: 'amb' },
+    { num: withDur, lbl: 'Duration', pct: pct(withDur, total), c: 'amb' },
+    { num: totalVideos, lbl: 'Total Videos', c: 'cyn' },
+    { num: fullyComplete, lbl: 'Fully Complete', pct: pct(fullyComplete, total), c: '' },
+  ];
+  document.getElementById('cards').innerHTML = cards.map(c =>
+    `<div class="card ${c.c}"><div class="num">${c.num}</div>
+     <div class="lbl">${c.lbl}</div>${c.pct ? `<div class="pct">${c.pct}</div>` : ''}</div>`
+  ).join('');
+
+  let d = 0;
+  document.getElementById('completeness').innerHTML =
+    [['PROFILE IMAGE', withImg, ''], ['VIDEO', withVid, 'cyn'], ['CITY', withCity, ''],
+     ['BIO / ABOUT', withAbout, ''], ['LANGUAGES', withLang, 'amb'], ['DURATION', withDur, 'amb'], ['CATEGORY', withCat, '']]
+    .map(([n, v, c]) => barRow(n, v, total, d += 50, c)).join('');
+
+  document.getElementById('categories').innerHTML = Object.entries(cats)
+    .sort((a,b)=>b[1]-a[1]).map(([k,v]) => barRow(k, v, total, 0, 'cyn')).join('');
+
+  document.getElementById('cities').innerHTML = Object.entries(cities)
+    .sort((a,b)=>b[1]-a[1]).slice(0,12).map(([k,v]) => barRow(k, v, total, 0)).join('');
+
+  const hl = [];
+  if (withImg === total) hl.push(`100% artists have profile image`);
+  if (withAbout === total) hl.push(`100% have bio / about`);
+  hl.push(`${pct(withVid, total)} have video (${totalVideos} total)`);
+  hl.push(`${Object.keys(cats).length} categories covered`);
+  hl.push(`${Object.keys(cities).length} distinct cities`);
+  if (fullyComplete > 0) hl.push(`${fullyComplete} fully complete (${pct(fullyComplete, total)})`);
+  document.getElementById('highlights').innerHTML = hl.map(h => `<span class="chip ok">[+] ${h}</span>`).join('');
+
+  const gaps = [];
+  const addGap = (label, missing) => { if (missing > 0) gaps.push(`${missing} (${pct(missing, total)}) missing ${label}`); };
+  addGap('video', total - withVid);
+  addGap('city', total - withCity);
+  addGap('languages', total - withLang);
+  addGap('duration', total - withDur);
+  if (data.filter(a => !a.faq || a.faq.length === 0).length === total) gaps.push(`faq empty on all (expected)`);
+  document.getElementById('gaps').innerHTML = gaps.length
+    ? gaps.map(g => `<span class="chip warn">[!] ${g}</span>`).join('')
+    : `<span class="chip ok">[+] no gaps detected</span>`;
+
+  document.getElementById('report').classList.remove('hidden');
+  animateBars(document.getElementById('report'));
+}
+
+function handleFile(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (!Array.isArray(data)) throw new Error('expected JSON array');
+      analyze(data);
+      document.getElementById('drop').classList.add('hidden');
+    } catch (err) { alert('parse error: ' + err.message); }
+  };
+  reader.readAsText(file);
+}
+const drop = document.getElementById('drop');
+const input = document.getElementById('file');
+input.addEventListener('change', e => { if (e.target.files[0]) handleFile(e.target.files[0]); });
+['dragover','dragenter'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+['dragleave','drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+drop.addEventListener('drop', e => { const f = e.dataTransfer.files[0]; if (f) handleFile(f); });
+</script>
+</body>
+</html>
