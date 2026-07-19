@@ -1,10 +1,23 @@
-# Google Maps Lead Scraper
+# BlueEye — Lead Scraping & Data Pipeline
 
-Scrapes Google Maps for event/wedding businesses. Two scopes: **27 Indian cities** (legacy) and **59 countries** (global).
+A multi-source lead-generation toolkit that scrapes business/artist profiles from **Google Maps** (India + global), **JustDial**, and **StarClinch**, then enriches them with emails, migrates images to ImageKit, and produces analytics dashboards.
 
 ---
 
-## Global Scrape (59 Countries)
+## What's in this repo
+
+| Module | Source | Scope | Engine | Status |
+|--------|--------|-------|--------|--------|
+| `Global_scrape_map/` | Google Maps | 59 countries, 26,143 queries | gosom Docker (Go) | ✅ 74,128 leads |
+| `method1/` + `method2/` | Google Maps | 27 Indian cities | Playwright (Py) / gosom Docker | P1 done (5,874 leads) |
+| `taskFetchEmail/` | Emails | Enrich Maps leads | Python + requests | 🔄 running |
+| `JustDial/` | JustDial | 27 Indian cities, 432 queries | Node.js scraper | ✅ 4,175 cleaned leads |
+| `Starclinch/` | StarClinch | Artist profiles | Node.js + ImageKit | ✅ migration done |
+| `clean_data.py` | — | Merge/dedup JustDial CSVs | Python utility | ✅ |
+
+---
+
+## Global Scrape — Google Maps (59 Countries)
 
 **Location:** `Global_scrape_map/`
 
@@ -63,7 +76,7 @@ python analytics.py --source cleaned_missing_emails      # pre-enrichment
 
 ---
 
-## India Scrape (27 Cities)
+## India Scrape — Google Maps (27 Cities)
 
 ### Method 2: gosom Docker (Go) — Primary
 
@@ -92,6 +105,47 @@ python run_all.py --phase 1
 ```bash
 cd taskFetchEmail
 python scraper_v1.py
+```
+
+---
+
+## JustDial Scraper (`JustDial/`)
+
+Scrapes [JustDial](https://www.justdial.com) for event/wedding business leads across **27 Indian cities** (16 categories each = 432 queries). Includes a Node.js scraping engine, a data-processing pipeline, and analytical reports.
+
+### Pipeline
+
+```bash
+# 1. Scrape raw data (longest step, auto-resumes via state.json)
+cd JustDial
+node scraper.js --all
+
+# 2. Merge + dedup + split by phone
+python clean_csv.py
+
+# 3. Generate MD analysis reports
+python analyse_csv.py
+```
+
+Other entry points: `node scraper.js --city Mumbai`, `node scraper.js --serve` (dashboard), `node scraper.js --list-pending`.
+
+### Data Stats
+
+| Dataset | Files | Rows | Tracked? |
+|---------|-------|------|----------|
+| Raw scraped (`csv/`) | 432 | 43,200 | No (gitignored) |
+| Merged per city (`raw_merged_data/`) | 27 | 43,200 | No (gitignored) |
+| Cleaned with phone (`with_number/`) | 27 | 2,990 | Yes |
+| Cleaned without phone (`without_number/`) | 27 | 1,185 | Yes |
+
+Dedup key: `(name, phone)` — 90.3% duplicates removed (39,025 of 43,200).
+
+### Top-level merge utility
+
+`clean_data.py` (repo root) merges all `JustDial/output/csv/*.csv` files into a single deduped `JustDial/justdial_clean.csv` with normalized city names.
+
+```bash
+python clean_data.py
 ```
 
 ---
@@ -138,10 +192,15 @@ scraping_info/
 ├── AGENTS.md
 ├── DEPLOY.md
 ├── .gitignore
+├── clean_data.py                  # Merge/dedup JustDial CSVs → justdial_clean.csv
 ├── data/                         # Data archives (gitignored)
 ├── method1/                      # Playwright scraper (India cities)
 ├── method2/                      # gosom Docker scraper (India P1 done)
 ├── taskFetchEmail/               # Legacy email enrichment
+├── JustDial/                     # JustDial scraper (27 cities, 432 queries)
+│   ├── scraper.js                # Node.js scraping engine
+│   ├── clean_csv.py / analyse_csv.py
+│   └── output/                   # csv/ + cleaned_data/ (gitignored runtime)
 ├── Starclinch/                   # StarClinch artist scrape + ImageKit migration
 │   ├── link_scrapper/            # Artist URL/data crawler
 │   └── data_modifier/            # 7-stage migration pipeline (scripts/ + view.html)
