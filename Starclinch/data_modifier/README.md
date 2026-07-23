@@ -26,24 +26,28 @@ data_modifier/
 ├── input_data/             # Read-only copies of the two sources
 │   ├── artists.json
 │   └── existing_data.json
+├── 6_view.html             # Card viewer for final data
 ├── scripts/                # All transformation scripts (run manually, in order)
 │   ├── 1_remove_duplicates.js
 │   ├── 2_rename_categories.js
 │   ├── 3_split_null_free.js
-│   ├── 4_image_migrate.js      # ImageKit image migration
-│   ├── 5_anti_copyright.js     # AI-powered about text rewriting
-│   ├── 6_final_verification_before_uploading.js  # STUB
-│   ├── 7_upload_to_db.js       # STUB
-│   └── ai-services/            # AI provider adapters
-│       ├── index.js            # Provider factory (reads AI_PROVIDER)
-│       ├── gemini.js           # Gemini provider
-│       └── openrouter.js       # OpenRouter provider
+│   ├── 4_image_migrate.js         # ImageKit image migration
+│   ├── 5_anti_copyright.js        # AI-powered about text rewriting
+│   ├── 5.2_data_preparance.js     # Merge abouts + fix URLs → 5_copyright_free.json
+│   ├── 6_final_verification_before_uploading.js  # Comprehensive verification vs MongoDB
+│   ├── 7_upload_to_db.js          # STUB (MongoDB upload)
+│   └── ai-services/               # AI provider adapters
+│       ├── index.js               # Provider factory (reads AI_PROVIDER)
+│       ├── gemini.js              # Gemini provider
+│       └── openrouter.js          # OpenRouter provider
 ├── output_json/            # Generated outputs (one file per script)
 │   ├── no_duplicate_artists.json
 │   ├── 2_renamed_data.json
 │   ├── 3_null_free.json
 │   ├── extra.json
-│   └── 4_imaged_migration_final.json  # step 4 final (9012 records, 0 foreign links)
+│   ├── 4_imaged_migration_final.json      # step 4 final (9012 records, 0 foreign links)
+│   ├── 5_copyright_free.json              # step 5.2: merged + URLs cleaned (9,012)
+│   └── 6_final_data.json                  # copy of 5_copyright_free.json for viewer/upload
 └── logs/                   # Reports & progress checkpoints
     ├── 1_remove_duplicates_report.json
     ├── 2_rename_categories_report.json
@@ -53,7 +57,8 @@ data_modifier/
     ├── 5_abouts.json               # Extracted about texts (step 5 input)
     ├── 5_modified_abouts.json      # AI-rewritten abouts (step 5 output)
     ├── 5_gemini_progress.json      # Resume checkpoint (step 5)
-    └── 5_gemini_failed.json        # Permanent failures log (step 5)
+    ├── 5_gemini_failed.json        # Permanent failures log (step 5)
+    └── 5_anti_copyright.log        # Step 5 run log
 ```
 
 ## Pipeline (data flow)
@@ -74,7 +79,16 @@ no_duplicate_artists.json        (dedup within + vs existing_data)
 4_imaged_migration_final.json    (image URLs migrated to ImageKit)
    │  scripts/5_anti_copyright.js
    ▼
-5_modified_abouts.json           (about texts rewritten via AI)
+logs/5_modified_abouts.json      (about texts rewritten via AI — 9,008 rewritten, 0 fail)
+   │  scripts/5.2_data_preparance.js
+   ▼
+output_json/5_copyright_free.json (merged abouts + blueeye URLs — 9,012 records)
+   │  scripts/6_final_verification_before_uploading.js
+   ▼
+Verdict: ⚠️ PASS WITH WARNINGS     (verified vs MongoDB, 5 warnings, 0 issues)
+   │  scripts/7_upload_to_db.js   [next — not yet implemented]
+   ▼
+MongoDB (BlueEyeEntertainment.artists)
 ```
 
 ## What each script does
@@ -141,6 +155,26 @@ wording while preserving all factual details.
 - Output: `logs/5_modified_abouts.json`
 - Checkpoints: `logs/5_gemini_progress.json` (done/failed IDs), `logs/5_gemini_failed.json`
 
+### 5.2_data_preparance.js
+Merges rewritten abouts into the final data and transforms all starclinch.com
+URLs to blueeyeentertainment.in:
+- Replaces `about` text with rewritten version (matched by `id`)
+- Transforms `source.url`: `starclinch.com/{slug}` → `blueeyeentertainment.in/artists/{slug}/`
+- Transforms `booking.url`: `starclinch.com/cart/checkout/{slug}` → `blueeyeentertainment.in/booking-form/?title={Name+}`
+- Input: `output_json/4_imaged_migration_final.json` + `logs/5_modified_abouts.json`
+- Output: `output_json/5_copyright_free.json` (9012 records, 0 starclinch URLs)
+
+### 6_final_verification_before_uploading.js
+Comprehensive verification script that checks every field against MongoDB:
+- Schema comparison vs existing MongoDB collection
+- URL integrity (0 starclinch, all images on ImageKit)
+- Field quality (null/empty counts)
+- Duplicate IDs and slugs
+- MongoDB slug overlap check
+- Outputs a detailed report and verdict
+- Verdict: ✅ PASS / ⚠️ PASS WITH WARNINGS / ❌ FAIL
+- Run before every upload attempt
+
 ## How to run
 
 Requirements: Node.js, `npm install imagekit dotenv`, and credentials in `.env`.
@@ -155,12 +189,17 @@ cp .env.example .env
 node scripts/1_remove_duplicates.js
 node scripts/2_rename_categories.js
 node scripts/3_split_null_free.js
-node scripts/4_image_migrate.js      # uploads images to ImageKit (long run)
-node scripts/5_anti_copyright.js     # rewrites about texts via AI (~35 min)
+node scripts/4_image_migrate.js              # uploads images to ImageKit (long run)
+node scripts/5_anti_copyright.js             # rewrites about texts via AI (~35 min)
+node scripts/5.2_data_preparance.js          # merge abouts + fix URLs (~10s)
+node scripts/6_final_verification_before_uploading.js  # verify before upload (~15s)
 ```
 
 Each script overwrites its output (idempotent given the same input). To start
 from scratch, clear `output_json/` and `logs/` first.
+
+**Viewer:** Open `6_view.html` in browser after step 6 to browse artists with
+images, YouTube links, and pagination.
 
 ## AI providers
 
@@ -175,4 +214,4 @@ Set `AI_PROVIDER=openrouter` or `AI_PROVIDER=gemini` in `.env` to switch.
 
 ## Notes
 - `existing_data.json` and `artists.json` are never written to by any script.
-- Steps 6–7 are placeholders for the next phase (verify → upload to DB).
+- Step 7 (MongoDB upload) is not yet implemented. Run step 6 before every upload attempt.

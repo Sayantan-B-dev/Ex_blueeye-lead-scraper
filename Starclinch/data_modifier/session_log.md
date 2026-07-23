@@ -3,8 +3,27 @@
 **Session ID:** `ses_08691c354ffe9CGrvQ4oDfvvlW`
 **Title:** Running 4 scripts in Starclinch data_modifier
 **Directory:** `Starclinch/data_modifier/`
-**Messages:** 341
-**Exported:** auto-dumped from `opencode.db` (SQLite).
+**Messages:** 341 (auto-dumped from opencode.db SQLite).
+
+---
+
+## Session 2 — Steps 5–6 complete (Jul 23 2026)
+
+**What was done:**
+- Switched from Gemini (quota blocked) to **OpenRouter** — created `ai-services/openrouter.js`
+- Multi-key rotation: `OPENROUTER_API_KEY_1..3`, random fallback on 429
+- `5_anti_copyright.js` rewrote **9,008 abouts** via GPT-4o-mini ($0 cost, 0 failures)
+- `5.2_data_preparance.js` merged abouts + transformed URLs
+  - 9,012 records, **0 starclinch.com URLs**, all → blueeyeentertainment.in
+- `6_final_verification_before_uploading.js` — comprehensive check vs MongoDB (1,638 existing docs)
+  - Schema, URLs, duplicates, field quality, slug overlap
+  - **Verdict: ⚠️ PASS WITH WARNINGS** — 5 warnings (3 extra keys to strip, 1 slug duplicate)
+- Created `6_view.html` — card viewer with pagination, images, YouTube links
+- Updated `config.js`, `README.md`, `session_log.md`, `.env.example`
+- Installed `mongodb` npm package (for step 6 verification)
+
+**Next:**
+- Step 7 — build `scripts/7_upload_to_db.js` to insert into MongoDB
 
 ---
 
