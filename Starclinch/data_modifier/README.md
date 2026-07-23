@@ -21,6 +21,8 @@ data_modifier/
 ├── artists.json            # RAW scrape source (DO NOT EDIT)
 ├── existing_data.json      # App DB snapshot (DO NOT EDIT)
 ├── README.md
+├── .env                    # API keys & config (gitignored)
+├── .env.example            # Template for .env
 ├── input_data/             # Read-only copies of the two sources
 │   ├── artists.json
 │   └── existing_data.json
@@ -28,24 +30,33 @@ data_modifier/
 │   ├── 1_remove_duplicates.js
 │   ├── 2_rename_categories.js
 │   ├── 3_split_null_free.js
-│   ├── 4_image_migrate.js      # ImageKit image migration (implemented)
-│   ├── 5_anti_copyright.js     # STUB
+│   ├── 4_image_migrate.js      # ImageKit image migration
+│   ├── 5_anti_copyright.js     # AI-powered about text rewriting
 │   ├── 6_final_verification_before_uploading.js  # STUB
-│   └── 7_upload_to_db.js       # STUB
+│   ├── 7_upload_to_db.js       # STUB
+│   └── ai-services/            # AI provider adapters
+│       ├── index.js            # Provider factory (reads AI_PROVIDER)
+│       ├── gemini.js           # Gemini provider
+│       └── openrouter.js       # OpenRouter provider
 ├── output_json/            # Generated outputs (one file per script)
-│   ├── no_duplicate_artists.json   # from step 1
-│   ├── 2_renamed_data.json         # from step 2
-│   ├── 3_null_free.json            # from step 3 (complete records)
-│   └── extra.json                  # from step 3 (records with missing fields)
-└── logs/                   # Reports
+│   ├── no_duplicate_artists.json
+│   ├── 2_renamed_data.json
+│   ├── 3_null_free.json
+│   ├── extra.json
+│   └── 4_imaged_migration_final.json  # step 4 final (9012 records, 0 foreign links)
+└── logs/                   # Reports & progress checkpoints
     ├── 1_remove_duplicates_report.json
     ├── 2_rename_categories_report.json
-    └── 3_split_null_free_report.json
+    ├── 3_split_null_free_report.json
+    ├── 4_image_migrate_progress.json
+    ├── 4_image_migrate_extra_progress.json
+    ├── 5_abouts.json               # Extracted about texts (step 5 input)
+    ├── 5_modified_abouts.json      # AI-rewritten abouts (step 5 output)
+    ├── 5_gemini_progress.json      # Resume checkpoint (step 5)
+    └── 5_gemini_failed.json        # Permanent failures log (step 5)
 ```
 
 ## Pipeline (data flow)
-
-Run scripts manually, in this order. Each step reads the previous step's output:
 
 ```
 artists.json
@@ -58,14 +69,13 @@ no_duplicate_artists.json        (dedup within + vs existing_data)
    │  scripts/3_split_null_free.js
    ▼
 3_null_free.json  +  extra.json  (split: complete vs missing fields)
+   │  scripts/4_image_migrate.js
+   ▼
+4_imaged_migration_final.json    (image URLs migrated to ImageKit)
+   │  scripts/5_anti_copyright.js
+   ▼
+5_modified_abouts.json           (about texts rewritten via AI)
 ```
-
-Note: video filling (yt-dlp) was removed from this flow. Records missing
-YouTube videos are no longer dealt with here — they are routed into `extra.json`
-by step 3 and set aside for later.
-
-Steps 5–7 are stubs (not yet implemented): anti-copyright sanitization,
-final verification, DB upload. Step 4 (image migration) is implemented.
 
 ## What each script does
 
@@ -111,28 +121,58 @@ Migrates artist images into ImageKit and replaces original URLs in the JSON.
 - Live analytics: per-batch progress + final summary.
 - Env: `IMG_CONCURRENCY` (default 3), `IMG_RETRIES` (default 3),
   `IMG_DELAY_MS` (default 300).
-- Input: `output_json/3_null_free.json`
-- Output: `output_json/4_images_migrated.json`
+- Input: `output_json/3_null_free.json` + `output_json/extra.json`
+- Output: `output_json/4_imaged_migration_final.json` (9012 records, 0 foreign links)
 - Report: `logs/4_image_migrate_report.json`
 
-## How to run (manually, in order)
+### 5_anti_copyright.js
+Rewrites every artist about text using an AI provider to produce original
+wording while preserving all factual details.
+- Supports **OpenRouter** (default) and **Gemini** — swap via `AI_PROVIDER` in `.env`.
+- Provider adapters in `scripts/ai-services/` share the same `rewrite(abouts)` contract.
+- Batches 20 abouts per API call; progress auto-saves after every batch.
+- Resume-safe: re-running skips already-processed IDs.
+- **OpenRouter multi-key rotation**: set `OPENROUTER_API_KEY_1`, `OPENROUTER_API_KEY_2`... up to 10 keys.
+  Falls back to single `OPENROUTER_API_KEY` if numbered keys not set.
+  Set `OPENROUTER_ROTATE=random|roundrobin` (default `random`). Auto-fallback on 429.
+- Env: `AI_PROVIDER` (openrouter/gemini), `OPENROUTER_API_KEY[_N]`, `BATCH_SIZE`,
+  `BATCH_DELAY_MS`, `OPENROUTER_MODEL`, `GEMINI_API_KEY`, `OPENROUTER_ROTATE`.
+- Input: `logs/5_abouts.json` (9008 about texts extracted from step 4 output)
+- Output: `logs/5_modified_abouts.json`
+- Checkpoints: `logs/5_gemini_progress.json` (done/failed IDs), `logs/5_gemini_failed.json`
 
-Requirements: Node.js, `imagekit` + `dotenv` (`npm install imagekit dotenv`),
-and ImageKit credentials in `.env` (IMAGEKIT_PUBLIC_KEY / PRIVATE_KEY /
-URL_ENDPOINT).
+## How to run
+
+Requirements: Node.js, `npm install imagekit dotenv`, and credentials in `.env`.
+
+Copy `.env.example` to `.env` and fill in your keys:
 
 ```bash
 cd data_modifier
+cp .env.example .env
+# edit .env with your keys
 
 node scripts/1_remove_duplicates.js
 node scripts/2_rename_categories.js
 node scripts/3_split_null_free.js
 node scripts/4_image_migrate.js      # uploads images to ImageKit (long run)
+node scripts/5_anti_copyright.js     # rewrites about texts via AI (~35 min)
 ```
 
 Each script overwrites its output (idempotent given the same input). To start
 from scratch, clear `output_json/` and `logs/` first.
 
+## AI providers
+
+| Provider   | Env variable                      | Notes                                       |
+|------------|-----------------------------------|---------------------------------------------|
+| OpenRouter | `OPENROUTER_API_KEY`              | Default. gpt-4o-mini (~$0.30)               |
+|            | `OPENROUTER_API_KEY_1..10`        | Multi-key rotation (falls back to single)   |
+|            | `OPENROUTER_ROTATE`               | `random` (default) or `roundrobin`          |
+| Gemini     | `GEMINI_API_KEY`                  | Set `AI_PROVIDER=gemini`                    |
+
+Set `AI_PROVIDER=openrouter` or `AI_PROVIDER=gemini` in `.env` to switch.
+
 ## Notes
 - `existing_data.json` and `artists.json` are never written to by any script.
-- Steps 5–7 are placeholders for the next phase (anti-copyright → verify → upload).
+- Steps 6–7 are placeholders for the next phase (verify → upload to DB).
