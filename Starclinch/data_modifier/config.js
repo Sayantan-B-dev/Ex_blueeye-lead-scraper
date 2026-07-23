@@ -8,6 +8,7 @@ window.ANALYSE_FILES = {
   "Renamed Cats": "output_json/2_renamed_data.json",
   "Null Free": "output_json/3_null_free.json",
   "Final (ImageKit)": "output_json/4_imaged_migration_final.json",
+  "Final (Copyright Free)": "output_json/6_final_data.json",
   "Extra (gaps source)": "output_json/extra.json",
 };
 // Default tab (must match a key above)

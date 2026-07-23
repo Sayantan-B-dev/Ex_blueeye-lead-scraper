@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6_final_data — Artist Viewer</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f1a; color: #e0e0e0; }
+  .header { background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 20px 30px; border-bottom: 1px solid #2a2a4a; position: sticky; top: 0; z-index: 100; }
+  .header h1 { font-size: 20px; color: #fff; margin-bottom: 4px; }
+  .header .stats { font-size: 13px; color: #888; }
+  .controls { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+  .controls select, .controls input { background: #1e1e36; color: #e0e0e0; border: 1px solid #3a3a5a; padding: 6px 12px; border-radius: 6px; font-size: 13px; }
+  .controls select:focus, .controls input:focus { outline: none; border-color: #5a5a8a; }
+  .controls label { font-size: 13px; color: #888; display: flex; align-items: center; gap: 6px; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; padding: 20px 30px; }
+  .card { background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 10px; overflow: hidden; transition: transform 0.15s, border-color 0.15s; }
+  .card:hover { transform: translateY(-2px); border-color: #4a4a7a; }
+  .card-img { width: 100%; height: 180px; object-fit: cover; background: #222; display: block; }
+  .card-img-placeholder { width: 100%; height: 180px; background: linear-gradient(135deg, #1e1e36, #2a2a4a); display: flex; align-items: center; justify-content: center; color: #555; font-size: 14px; }
+  .card-body { padding: 14px 16px; }
+  .card-body h3 { font-size: 15px; color: #fff; margin-bottom: 3px; }
+  .card-body .slug { font-size: 11px; color: #666; margin-bottom: 8px; }
+  .card-body .category { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-bottom: 8px; }
+  .cat-Singer { background: #1a3a3a; color: #4fc3f7; }
+  .cat-Band { background: #2a1a3a; color: #ce93d8; }
+  .cat-DJ { background: #3a2a1a; color: #ffb74d; }
+  .cat-Instrumentalist { background: #1a2a1a; color: #81c784; }
+  .card-body .about { font-size: 12px; color: #aaa; line-height: 1.5; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .card-body .about-full { font-size: 12px; color: #aaa; line-height: 1.5; margin-bottom: 10px; }
+  .card-body .links { display: flex; gap: 8px; flex-wrap: wrap; }
+  .card-body .links a { font-size: 11px; color: #5a8af0; text-decoration: none; padding: 3px 8px; border: 1px solid #2a2a5a; border-radius: 4px; }
+  .card-body .links a:hover { background: #2a2a5a; }
+  .card-body .videos { margin-top: 8px; font-size: 11px; color: #888; }
+  .card-body .videos a { color: #ff6b6b; text-decoration: none; }
+  .card-body .videos a:hover { text-decoration: underline; }
+  .card-body .location { font-size: 11px; color: #666; margin-bottom: 6px; }
+  .pagination { display: flex; justify-content: center; align-items: center; gap: 8px; padding: 20px; }
+  .pagination button { background: #1e1e36; color: #e0e0e0; border: 1px solid #3a3a5a; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+  .pagination button:hover:not(:disabled) { background: #2e2e4e; }
+  .pagination button:disabled { opacity: 0.4; cursor: default; }
+  .pagination span { font-size: 13px; color: #888; }
+  .empty { text-align: center; padding: 60px 20px; color: #555; }
+  .loading { text-align: center; padding: 60px 20px; color: #888; }
+  .img-count { font-size: 11px; color: #666; margin-top: 4px; }
+  .youtube-link { color: #ff5555; text-decoration: none; font-size: 11px; margin-right: 4px; }
+  .youtube-link:hover { text-decoration: underline; }
+  .show-more-btn { font-size: 11px; color: #5a8af0; cursor: pointer; border: none; background: none; padding: 0; }
+  .show-more-btn:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>6_final_data — Artist Viewer</h1>
+  <div class="stats" id="stats">Loading...</div>
+  <div class="controls">
+    <label>Category:
+      <select id="filterCat"><option value="">All</option></select>
+    </label>
+    <label>Search:
+      <input type="text" id="searchInput" placeholder="Name or slug..." style="width:180px">
+    </label>
+    <label>Per page:
+      <select id="perPageSelect"><option value="20">20</option><option value="50" selected>50</option><option value="100">100</option></select>
+    </label>
+  </div>
+</div>
+
+<div id="loading" class="loading">Loading data...</div>
+<div id="cardsContainer" class="card-grid" style="display:none"></div>
+<div id="empty" class="empty" style="display:none">No artists match your filter.</div>
+<div id="pagination" class="pagination" style="display:none"></div>
+
+<script>
+let allData = [];
+let currentPage = 1;
+let perPage = 50;
+
+async function loadData() {
+  try {
+    const res = await fetch('output_json/6_final_data.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    allData = JSON.parse(await res.text());
+    document.getElementById('loading').style.display = 'none';
+
+    // Populate category filter
+    const cats = [...new Set(allData.map(d => d.category).filter(Boolean))].sort();
+    const sel = document.getElementById('filterCat');
+    cats.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; sel.appendChild(o); });
+
+    applyFilters();
+  } catch (e) {
+    document.getElementById('loading').textContent = 'Error loading data: ' + e.message;
+  }
+}
+
+function getFiltered() {
+  const cat = document.getElementById('filterCat').value;
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  return allData.filter(d => {
+    if (cat && d.category !== cat) return false;
+    if (q && !d.name.toLowerCase().includes(q) && !d.slug.toLowerCase().includes(q)) return false;
+    return true;
+  });
+}
+
+function applyFilters() {
+  currentPage = 1;
+  perPage = parseInt(document.getElementById('perPageSelect').value, 10);
+  render();
+}
+
+function render() {
+  const filtered = getFiltered();
+  const total = filtered.length;
+  const totalPages = Math.ceil(total / perPage) || 1;
+
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  const start = (currentPage - 1) * perPage;
+  const page = filtered.slice(start, start + perPage);
+
+  document.getElementById('stats').textContent = `${allData.length} total · ${total} filtered · page ${currentPage}/${totalPages}`;
+  document.getElementById('pagination').style.display = totalPages > 1 ? 'flex' : 'none';
+  document.getElementById('empty').style.display = total === 0 ? 'block' : 'none';
+
+  const container = document.getElementById('cardsContainer');
+  container.style.display = total > 0 ? 'grid' : 'none';
+  container.innerHTML = '';
+
+  // Build pagination
+  const pag = document.getElementById('pagination');
+  pag.innerHTML = '';
+  if (totalPages <= 1) return;
+
+  const prevBtn = document.createElement('button');
+  prevBtn.textContent = '◀ Prev';
+  prevBtn.disabled = currentPage <= 1;
+  prevBtn.onclick = () => { if (currentPage > 1) { currentPage--; render(); } };
+  pag.appendChild(prevBtn);
+
+  const span = document.createElement('span');
+  span.textContent = `${currentPage} / ${totalPages}`;
+  pag.appendChild(span);
+
+  const nextBtn = document.createElement('button');
+  nextBtn.textContent = 'Next ▶';
+  nextBtn.disabled = currentPage >= totalPages;
+  nextBtn.onclick = () => { if (currentPage < totalPages) { currentPage++; render(); } };
+  pag.appendChild(nextBtn);
+
+  // Render cards
+  for (const d of page) {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    // Image
+    const imgUrl = d.media?.images?.[0];
+    if (imgUrl) {
+      const img = document.createElement('img');
+      img.className = 'card-img';
+      img.src = imgUrl;
+      img.loading = 'lazy';
+      img.onerror = function() { this.style.display = 'none'; this.nextElementSibling.style.display = 'flex'; };
+      card.appendChild(img);
+      const placeholder = document.createElement('div');
+      placeholder.className = 'card-img-placeholder';
+      placeholder.textContent = '🎵 ' + (d.name || d.slug);
+      placeholder.style.display = 'none';
+      card.appendChild(placeholder);
+    } else {
+      const placeholder = document.createElement('div');
+      placeholder.className = 'card-img-placeholder';
+      placeholder.textContent = '🎵 ' + (d.name || d.slug);
+      card.appendChild(placeholder);
+    }
+
+    // Body
+    const body = document.createElement('div');
+    body.className = 'card-body';
+
+    const nameEl = document.createElement('h3');
+    nameEl.textContent = d.name || d.slug;
+    body.appendChild(nameEl);
+
+    const slugEl = document.createElement('div');
+    slugEl.className = 'slug';
+    slugEl.textContent = d.slug;
+    body.appendChild(slugEl);
+
+    const catEl = document.createElement('span');
+    catEl.className = 'category cat-' + (d.category || 'Unknown');
+    catEl.textContent = d.category || 'Unknown';
+    body.appendChild(catEl);
+
+    if (d.location) {
+      const loc = document.createElement('div');
+      loc.className = 'location';
+      loc.textContent = [d.location.city, d.location.state, d.location.country].filter(Boolean).join(', ') || 'Location N/A';
+      body.appendChild(loc);
+    }
+
+    const about = d.about || '';
+    const aboutEl = document.createElement('div');
+    aboutEl.className = 'about';
+    aboutEl.textContent = about;
+    aboutEl.id = 'about-' + d.id;
+    body.appendChild(aboutEl);
+
+    // Links
+    const links = document.createElement('div');
+    links.className = 'links';
+    if (d.booking?.url) {
+      const a = document.createElement('a');
+      a.href = d.booking.url;
+      a.target = '_blank';
+      a.textContent = '📅 Booking';
+      links.appendChild(a);
+    }
+    if (d.source?.url) {
+      const a = document.createElement('a');
+      a.href = d.source.url;
+      a.target = '_blank';
+      a.textContent = '🔗 Source';
+      links.appendChild(a);
+    }
+    body.appendChild(links);
+
+    // Img count
+    if (d.media?.images?.length > 1) {
+      const ic = document.createElement('div');
+      ic.className = 'img-count';
+      ic.textContent = `${d.media.images.length} images`;
+      body.appendChild(ic);
+    }
+
+    // Videos
+    if (d.media?.videos?.length > 0) {
+      const v = document.createElement('div');
+      v.className = 'videos';
+      v.textContent = '🎬 ' + d.media.videos.length + ' video' + (d.media.videos.length > 1 ? 's' : '') + ': ';
+      d.media.videos.forEach((url, i) => {
+        const a = document.createElement('a');
+        a.className = 'youtube-link';
+        a.href = url;
+        a.target = '_blank';
+        a.textContent = '▶' + (i + 1);
+        v.appendChild(a);
+      });
+      body.appendChild(v);
+    }
+
+    card.appendChild(body);
+    container.appendChild(card);
+  }
+}
+
+document.getElementById('filterCat').addEventListener('change', applyFilters);
+document.getElementById('searchInput').addEventListener('input', applyFilters);
+document.getElementById('perPageSelect').addEventListener('change', applyFilters);
+
+loadData();
+</script>
+</body>
+</html>

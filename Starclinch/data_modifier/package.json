@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "dotenv": "^17.4.2",
-    "imagekit": "^6.0.0"
+    "imagekit": "^6.0.0",
+    "mongodb": "^7.5.0"
   }
 }
